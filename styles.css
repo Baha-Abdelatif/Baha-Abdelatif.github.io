@@ -43,13 +43,25 @@ body {
 .colored-text {
   color: #fca311;
 }
-.filled-background{
+.filled-background {
   background-image: linear-gradient(120deg, #1d1d1d 0%, #1d1d1d 100%),
-  linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
+    linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
 }
-.box-shadow{
-  box-shadow: 0 0 0.5rem #fca311ff;
+.box-shadow {
+  /* box-shadow: 0 0 0.5rem #fca311ff; */
+  background: linear-gradient(#1d1e22ff, #1d1e22ff) padding-box,
+  linear-gradient(
+    120deg,
+    #fca311ff 0%,
+    #fffafa 75%,
+    #1d1e22ff 100%
+  ) border-box;
+  border-radius: 50em;
+  border: 0.125rem solid transparent;
 }
+
+
+
 /* --------- STYLE DE LA NAVBAR --------- */
 
 header {
@@ -63,9 +75,10 @@ header {
 }
 header::after {
   position: absolute;
+  display: block;
   top: 15vh;
   content: " ";
-  height: 1px;
+  height: 0.125rem;
   width: 100%;
   background: linear-gradient(
     120deg,
@@ -73,6 +86,7 @@ header::after {
     #fffafa 75%,
     #1d1e22ff 100%
   );
+  /* box-shadow: 0px 15px 10px -15px #fca311; */
 }
 
 .logo {
@@ -105,7 +119,7 @@ section.hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 10rem;
+  padding: 2.5rem 5rem;
 }
 .hero_card-wrapper {
   box-sizing: border-box;
@@ -118,7 +132,6 @@ section.hero {
     "hero_presentation-card hero_contact-card";
   gap: 2.5rem;
   padding: 2.5rem;
-
 }
 .hero_card-title {
   width: 100%;
@@ -158,12 +171,12 @@ section.hero {
 .avatar {
   height: 17.5vh;
 }
-.informations_wrapper{
+.informations_wrapper {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.hero_text-presentation{
+.hero_text-presentation {
   grid-area: presentation;
 }
