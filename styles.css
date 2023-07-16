@@ -48,19 +48,13 @@ body {
     linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
 }
 .box-shadow {
-  /* box-shadow: 0 0 0.5rem #fca311ff; */
   background: linear-gradient(#1d1e22ff, #1d1e22ff) padding-box,
-  linear-gradient(
-    120deg,
-    #fca311ff 0%,
-    #fffafa 75%,
-    #1d1e22ff 100%
-  ) border-box;
-  border-radius: 50em;
+    linear-gradient(120deg, #fca311ff 0%, #fffafa 75%, #1d1e22ff 100%)
+      border-box;
   border: 0.125rem solid transparent;
+  border-radius: 1rem;
+  padding: 2.5rem;
 }
-
-
 
 /* --------- STYLE DE LA NAVBAR --------- */
 
@@ -118,11 +112,10 @@ section.hero {
   grid-area: hero;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2.5rem 5rem;
+  padding: 0 5rem;
+  padding-bottom: 2.5rem;
 }
 .hero_card-wrapper {
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 0.5fr 1.5fr;
@@ -130,32 +123,30 @@ section.hero {
     "hero_title hero_title"
     "hero_presentation-card hero_contact-card"
     "hero_presentation-card hero_contact-card";
-  gap: 2.5rem;
-  padding: 2.5rem;
+  gap: 1.25rem;
 }
 .hero_card-title {
-  width: 100%;
   grid-area: hero_title;
-  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 1.75rem;
   text-transform: uppercase;
-  text-align: center;
-  border-radius: 1rem;
 }
-.hero_card {
-  padding: 2.5rem;
-  border-radius: 1rem;
-}
-.hero_card:hover {
+/* .hero_card:hover {
   box-shadow: 0 0 1rem #fca311ff;
   transform: scale(1.05);
-}
+} */
 .presentation-card {
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
-  grid-template-rows: 0.75fr 1.25fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.25rem;
   grid-template-areas:
     "avatar informations"
-    "presentation presentation";
+    "socials socials";
 }
 .avatar_wrapper {
   grid-area: avatar;
@@ -164,19 +155,36 @@ section.hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 17.5vh;
-  height: 17.5vh;
+  width: 15vh;
+  height: 15vh;
   overflow: hidden;
+  margin: auto;
 }
 .avatar {
-  height: 17.5vh;
+  height: 22.5vh;
 }
 .informations_wrapper {
-  font-size: 1rem;
+  font-size: 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  margin: auto;
+}
+.social-links_wrapper{
+  grid-area: socials;
+}
+
+
+
+.hero_coding-activity {
+  grid-area: coding-activity;
 }
 .hero_text-presentation {
   grid-area: presentation;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  padding: 1.125rem;
 }
