@@ -1,4 +1,4 @@
-### Portfolio Statique regroupant mes projets web
+## Portfolio Statique regroupant mes projets web
 
 ### réalisés dans le cadre de mon Titre Professionnel Développeur d'Application Web.
 

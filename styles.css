@@ -16,6 +16,8 @@ CSS HSL colors
 
 body {
   background-color: #1c1d21;
+  background-image: url("./assets/herobackground.png");
+  background-attachment: fixed;
   color: white;
   font-size: 62.5%;
   font-family: sans-serif;
@@ -24,6 +26,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 15vh 85vh repeat(3, 1fr) 30vh;
+  gap: 2.5rem;
   grid-template-areas:
     "header header"
     "hero hero"
@@ -40,7 +43,13 @@ body {
 .colored-text {
   color: #fca311;
 }
-
+.filled-background{
+  background-image: linear-gradient(120deg, #1d1d1d 0%, #1d1d1d 100%),
+  linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
+}
+.box-shadow{
+  box-shadow: 0 0 0.5rem #fca311ff;
+}
 /* --------- STYLE DE LA NAVBAR --------- */
 
 header {
@@ -93,7 +102,6 @@ header::after {
 
 section.hero {
   grid-area: hero;
-  background-image: url("./assets/herobackground.png");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,13 +116,9 @@ section.hero {
     "hero_title hero_title"
     "hero_presentation-card hero_contact-card"
     "hero_presentation-card hero_contact-card";
-  grid-column-gap: 2.5rem;
+  gap: 2.5rem;
   padding: 2.5rem;
-  background-image: linear-gradient(120deg, #1d1d1d 0%, #1d1d1d 100%),
-    linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
-  /* border: 0.5rem solid #fca311ff; */
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem #fca311ff;
+
 }
 .hero_card-title {
   width: 100%;
@@ -122,13 +126,10 @@ section.hero {
   font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
+  border-radius: 1rem;
 }
 .hero_card {
-  /* width: 30%;
-  height: 100%; */
   padding: 2.5rem;
-  /* border: 0.125rem solid #fca311ff; */
-  box-shadow: 0 0 0.5rem #fca311ff;
   border-radius: 1rem;
 }
 .hero_card:hover {
@@ -161,7 +162,7 @@ section.hero {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-
+  justify-content: flex-start;
 }
 .hero_text-presentation{
   grid-area: presentation;
