@@ -37,6 +37,10 @@ body {
   text-decoration: none;
 }
 
+.colored-text {
+  color: #fca311;
+}
+
 /* --------- STYLE DE LA NAVBAR --------- */
 
 header {
@@ -82,15 +86,10 @@ header::after {
 }
 .nav-link:hover {
   color: #fca311ff;
-  text-shadow: 0 0 1px #fca311ff;
+  text-shadow: 0 0 2px #fca311ff;
 }
 
 /* --------- STYLE DE LA SECTION HERO --------- */
-
-.page-title {
-  font-size: 1.75rem;
-  font-family: sans-serif;
-}
 
 section.hero {
   grid-area: hero;
@@ -101,19 +100,69 @@ section.hero {
   padding: 5rem 10rem;
 }
 .hero_card-wrapper {
+  box-sizing: border-box;
   display: grid;
-  /* padding: 5rem 10rem; */
-  background-color: #1d1e22cc;
-  border: 0.5rem solid #fca311ff;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-areas:
+    "hero_title hero_title"
+    "hero_presentation-card hero_contact-card"
+    "hero_presentation-card hero_contact-card";
+  grid-column-gap: 2.5rem;
+  padding: 2.5rem;
+  background-image: linear-gradient(120deg, #1d1d1d 0%, #1d1d1d 100%),
+    linear-gradient(120deg, #fca21180 0%, #fffafa80 50%, #1d1e2280 100%);
+  /* border: 0.5rem solid #fca311ff; */
   border-radius: 1rem;
+  box-shadow: 0 0 1rem #fca311ff;
+}
+.hero_card-title {
+  width: 100%;
+  grid-area: hero_title;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 .hero_card {
-  width: 30%;
+  /* width: 30%;
+  height: 100%; */
   padding: 2.5rem;
+  /* border: 0.125rem solid #fca311ff; */
+  box-shadow: 0 0 0.5rem #fca311ff;
+  border-radius: 1rem;
 }
+.hero_card:hover {
+  box-shadow: 0 0 1rem #fca311ff;
+  transform: scale(1.05);
+}
+.presentation-card {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-rows: 0.75fr 1.25fr;
+  grid-template-areas:
+    "avatar informations"
+    "presentation presentation";
+}
+.avatar_wrapper {
+  grid-area: avatar;
+  border-radius: 100%;
+  box-shadow: 0 0 0.25rem #fca311ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17.5vh;
+  height: 17.5vh;
+  overflow: hidden;
+}
+.avatar {
+  height: 17.5vh;
+}
+.informations_wrapper{
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 
-h1 {
-  /* font-size: 3rem; */
-  text-transform: uppercase;
-  /* text-align: center; */
+}
+.hero_text-presentation{
+  grid-area: presentation;
 }
