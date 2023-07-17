@@ -1,22 +1,10 @@
-/* CSS HEX colors
---black: #1d1e22ff;
---oxford-blue: #14213dff;
---orange-web: #fca311ff;
---platinum: #e5e5e5ff;
---white: #fffafa;
-
-CSS HSL colors
---black: hsla(228, 8%, 12%,1);
---oxford-blue: hsla(221, 51%, 16%, 1);
---orange-web: hsla(37, 98%, 53%, 1);
---platinum: hsla(0, 0%, 90%, 1);
---white: hsl(0, 100%, 99%); */
+/* Valeurs globales du site */
 /* --------- STYLE GENERAL DE LA PAGE --------- */
 body {
-  background-color: #1c1d21;
+  background-color: #1d1e22;
   background-image: url("./assets/herobackground.png");
   background-attachment: fixed;
-  color: white;
+  color: snow;
   font-size: 62.5%;
   font-family: sans-serif;
   margin: 0;
@@ -29,8 +17,12 @@ body {
 }
 
 .link {
-  color: #fffafa;
+  color: snow;
   text-decoration: none;
+}
+.link:hover {
+  color: #fca311;
+  text-shadow: 0 0 2px #fca311;
 }
 
 .colored-text {
@@ -38,11 +30,11 @@ body {
 }
 
 .filled-background {
-  background-image: linear-gradient(120deg, #1d1d1d 0%, #1d1d1d 100%), linear-gradient(120deg, rgba(252, 162, 17, 0.5019607843) 0%, rgba(255, 250, 250, 0.5019607843) 50%, rgba(29, 30, 34, 0.5019607843) 100%);
+  background-image: linear-gradient(120deg, #1d1e22 0%, #1d1e22 100%), linear-gradient(120deg, rgba(252, 163, 17, 0.5) 0%, rgba(255, 250, 250, 0.5) 50%, rgba(29, 30, 34, 0.5) 100%);
 }
 
 .box-shadow {
-  background: linear-gradient(#1d1e22, #1d1e22) padding-box, linear-gradient(120deg, #fca311 0%, #fffafa 75%, #1d1e22 100%) border-box;
+  background: linear-gradient(120deg, #1d1e22 0%, #1d1e22 100%) padding-box, linear-gradient(120deg, rgba(252, 163, 17, 0.5) 0%, rgba(255, 250, 250, 0.5) 50%, rgba(29, 30, 34, 0.5) 100%) border-box;
   border: 0.125rem solid transparent;
   border-radius: 1rem;
   padding: 2.5rem;
@@ -58,7 +50,6 @@ header {
   gap: 1.5rem;
   padding: 1.25rem 0;
 }
-
 header::after {
   position: absolute;
   display: block;
@@ -66,16 +57,14 @@ header::after {
   content: " ";
   height: 0.125rem;
   width: 100%;
-  background: linear-gradient(120deg, #fca311 0%, #fffafa 75%, #1d1e22 100%);
+  background: linear-gradient(120deg, #fca311 0%, snow 75%, #1d1e22 100%);
   /* box-shadow: 0px 15px 10px -15px #fca311; */
 }
-
-.logo {
-  height: 27.5vh;
+header .logo {
+  height: 22.5vh;
   margin-left: 2.5rem;
 }
-
-.nav_menu {
+header .nav_menu {
   width: 65vw;
   list-style: none;
   display: flex;
@@ -83,99 +72,115 @@ header::after {
   justify-content: space-between;
   margin-right: 5rem;
 }
-
-.nav-link {
+header .nav-link {
   font-size: 1.25rem;
   text-transform: uppercase;
   transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
-}
-
-.nav-link:hover {
-  color: #fca311;
-  text-shadow: 0 0 2px #fca311;
 }
 
 /* --------- STYLE DE LA SECTION HERO --------- */
 section.hero {
   grid-area: hero;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
   padding: 0 5rem;
   padding-bottom: 2.5rem;
 }
-
-.hero_card-wrapper {
+section.hero .hero_card-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 0.5fr 1.5fr;
   grid-template-areas: "hero_title hero_title" "hero_presentation-card hero_contact-card" "hero_presentation-card hero_contact-card";
   gap: 1.25rem;
+  /* .hero_card:hover {
+    box-shadow: 0 0 $font-xs $orange-web;
+    transform: scale(1.05);
+  } */
 }
-
-.hero_card-title {
+section.hero .hero_card-wrapper .hero_card-title {
   grid-area: hero_title;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 1.25rem;
-  font-size: 1.75rem;
+  font-size: 2rem;
   text-transform: uppercase;
 }
-
-/* .hero_card:hover {
-  box-shadow: 0 0 1rem #fca311ff;
-  transform: scale(1.05);
-} */
-.presentation-card {
+section.hero .hero_card-wrapper .presentation-card {
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 1.25rem;
   grid-template-areas: "avatar informations" "socials socials";
 }
-
-.avatar_wrapper {
+section.hero .hero_card-wrapper .presentation-card .avatar_wrapper {
   grid-area: avatar;
   border-radius: 100%;
   box-shadow: 0 0 0.25rem #fca311;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 15vh;
   height: 15vh;
   overflow: hidden;
   margin: auto;
 }
-
-.avatar {
-  height: 22.5vh;
+section.hero .hero_card-wrapper .presentation-card .avatar_wrapper .avatar {
+  height: 26.25vh;
 }
-
-.informations_wrapper {
+section.hero .hero_card-wrapper .presentation-card .informations_wrapper {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 1rem;
   margin: auto;
 }
-
-.social-links_wrapper {
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper {
   grid-area: socials;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-
-.hero_coding-activity {
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_title {
+  font-size: 2rem;
+}
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email {
+  font-size: 1rem;
+}
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email .link {
+  text-decoration: underline;
+}
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi {
+  height: 3rem;
+  width: 3rem;
+}
+section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi:hover {
+  color: #fca311;
+}
+section.hero .hero_card-wrapper .activity-card .hero_coding-activity {
   grid-area: coding-activity;
 }
-
-.hero_text-presentation {
+section.hero .hero_card-wrapper .activity-card .hero_text-presentation {
   grid-area: presentation;
   text-align: justify;
   font-size: 1rem;
-  line-height: 1.125rem;
-  padding: 1.125rem;
-}
-
-/*# sourceMappingURL=styles.css.map */
+  line-height: calc(1rem + 15%);
+  padding: 1rem;
+}/*# sourceMappingURL=styles.css.map */
