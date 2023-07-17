@@ -47,6 +47,7 @@ body {
     "about about"
     "contact contact";
 }
+
 .link {
   color: $white;
   text-decoration: none;
@@ -68,7 +69,7 @@ body {
       rgba($black, 0.5) 100%
     );
 }
-.box-shadow {
+.border-box {
   background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
     linear-gradient(
         120deg,
@@ -81,15 +82,7 @@ body {
   border-radius: $font-xs;
   padding: $font-l;
 }
-
-/* --------- STYLE DE LA NAVBAR --------- */
-
-header {
-  grid-area: header;
-  @include flex-center(row, space-between, center);
-  gap: $font-xm;
-  padding: $font-s 0;
-
+.shadowline {
   &::after {
     position: absolute;
     display: block;
@@ -103,8 +96,18 @@ header {
       $white 75%,
       $black 100%
     );
-    /* box-shadow: 0px 15px 10px -15px #fca311; */
+    box-shadow: 0px 0px 5px 1px $orange-web;
   }
+}
+
+/* --------- STYLE DE LA NAVBAR --------- */
+
+header {
+  grid-area: header;
+  @include flex-center(row, space-between, center);
+  gap: $font-xm;
+  padding: $font-s 0;
+
   .logo {
     height: calc($global-vh * 1.5);
     margin-left: $font-l;
@@ -189,7 +192,7 @@ section.hero {
 
         .social-links_email {
           font-size: $font-xs;
-          .link{
+          .link {
             text-decoration: underline;
           }
         }
@@ -210,17 +213,53 @@ section.hero {
       }
     }
 
-    .activity-card {
-      .hero_coding-activity {
-        grid-area: coding-activity;
+    .activity-card_charts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: $font-xxl;
+      grid-template-rows: 0.25fr 1.75fr;
+      grid-template-areas:
+        "Title Title"
+        "Languages TimeSpent";
+      gap: $font-m;
+
+      .activity-card_title {
+        grid-area: Title;
+
+        p {
+          font-size: $font-xs;
+        }
       }
-      .hero_text-presentation {
-        grid-area: presentation;
-        text-align: justify;
+      .activity-charts_wrapper{
+        @include flex-center(column,center ,space-between );
+        gap: $font-s;
+      }
+      .activity-charts {
+        border-radius: $font-xs;
+        height: calc(2.5 * $font-xxl);
+      }
+      .languages-chart {
+        grid-area: Languages;
+        // @include flex-center(row, flex-start, flex-start);
+      }
+      .timespent-chart {
+        grid-area: TimeSpent;
+        // @include flex-center(row, flex-end, flex-end);
+      }
+      .charts-caption {
         font-size: $font-xs;
-        line-height: calc($font-xs + 15%);
-        padding: $font-xs;
+        line-height: calc($font-xs * 1.15);
+        text-decoration: underline;
+
       }
     }
   }
 }
+
+// .hero_text-presentation {
+//   grid-area: presentation;
+//   text-align: justify;
+//   font-size: $font-xs;
+//   line-height: calc($font-xs + 15%);
+//   padding: $font-xs;
+// }
