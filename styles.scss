@@ -1,8 +1,8 @@
 /* Valeurs globales du site */
 
 $black: #1d1e22ff;
-$oxford-blue: #14213dff;
-$orange-web: #fca311ff;
+$blue: #128dfc;
+$orange: #fca311ff;
 $platinum: #e5e5e5ff;
 $white: #fffafaff;
 
@@ -38,7 +38,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: $global-vh 85vh repeat(3, 1fr) 30vh;
-  gap: $font-l;
+  gap: $font-m;
   grid-template-areas:
     "header header"
     "hero hero"
@@ -49,22 +49,23 @@ body {
 }
 
 .link {
-  color: $white;
+  color: $blue;
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
+
   &:hover {
-    color: $orange-web;
-    text-shadow: 0 0 2px $orange-web;
+    color: $orange;
   }
 }
 
 .colored-text {
-  color: $orange-web;
+  color: $orange;
 }
 .filled-background {
   background-image: linear-gradient(120deg, $black 0%, $black 100%),
     linear-gradient(
       120deg,
-      rgba($orange-web, 0.5) 0%,
+      rgba($orange, 0.5) 0%,
       rgba($white, 0.5) 50%,
       rgba($black, 0.5) 100%
     );
@@ -73,7 +74,7 @@ body {
   background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
     linear-gradient(
         120deg,
-        rgba($orange-web, 0.5) 0%,
+        rgba($orange, 0.5) 0%,
         rgba($white, 0.5) 50%,
         rgba($black, 0.5) 100%
       )
@@ -81,6 +82,19 @@ body {
   border: $font-micro solid transparent;
   border-radius: $font-xs;
   padding: $font-l;
+  transition: background 0.75s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
+      linear-gradient(
+          120deg,
+          rgba($orange, 0.5) 0%,
+          rgba($white, 0.5) 50%,
+          rgba($black, 0.5) 100%
+        )
+        border-box,
+      $blue;
+  }
 }
 .shadowline {
   &::after {
@@ -90,13 +104,8 @@ body {
     content: " ";
     height: $font-micro;
     width: 100%;
-    background: linear-gradient(
-      120deg,
-      $orange-web 0%,
-      $white 75%,
-      $black 100%
-    );
-    box-shadow: 0px 0px 5px 1px $orange-web;
+    background: linear-gradient(120deg, $orange 0%, $white 75%, $black 100%);
+    box-shadow: 0px 0px 5px 1px $orange;
   }
 }
 
@@ -122,6 +131,7 @@ header {
   }
   .nav-link {
     font-size: $font-s;
+    color: $white;
     text-transform: uppercase;
     transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
   }
@@ -133,7 +143,7 @@ section.hero {
   grid-area: hero;
   @include flex-center(row, center, flex-start);
   padding: 0 $font-xxl;
-  padding-bottom: $font-l;
+  // padding-bottom: $font-l;
   .hero_card-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -151,7 +161,7 @@ section.hero {
       text-transform: uppercase;
     }
     /* .hero_card:hover {
-      box-shadow: 0 0 $font-xs $orange-web;
+      box-shadow: 0 0 $font-xs $orange;
       transform: scale(1.05);
     } */
     .presentation-card {
@@ -165,7 +175,7 @@ section.hero {
       .avatar_wrapper {
         grid-area: avatar;
         border-radius: 100%;
-        box-shadow: 0 0 0.25rem $orange-web;
+        box-shadow: 0 0 0.25rem $orange;
         @include flex-center();
         width: $global-vh;
         height: $global-vh;
@@ -206,8 +216,9 @@ section.hero {
         .bi {
           height: $font-xl;
           width: $font-xl;
+          color: $white;
           &:hover {
-            color: $orange-web;
+            color: $orange;
           }
         }
       }
@@ -225,13 +236,14 @@ section.hero {
 
       .activity-card_title {
         grid-area: Title;
-
         p {
           font-size: $font-xs;
+          line-height: calc($font-s * 1.15);
+          text-align: end;
         }
       }
-      .activity-charts_wrapper{
-        @include flex-center(column,center ,space-between );
+      .activity-charts_wrapper {
+        @include flex-center(column, center, space-between);
         gap: $font-s;
       }
       .activity-charts {
@@ -247,10 +259,41 @@ section.hero {
         // @include flex-center(row, flex-end, flex-end);
       }
       .charts-caption {
-        font-size: $font-xs;
-        line-height: calc($font-xs * 1.15);
-        text-decoration: underline;
+        text-align: center;
+        font-size: $font-s;
+        line-height: calc($font-s * 1.15);
+      }
+    }
+  }
+}
 
+/* --------- STYLE DE LA SECTION HERO --------- */
+
+section.parcours {
+  grid-area: parcours;
+  @include flex-center(column, center, space-between);
+  gap: $font-s;
+  padding: 0 $font-xxl;
+  padding-bottom: $font-l;
+  .parcours-title {
+    text-align: center;
+    font-size: $font-m;
+  }
+  .parcours-resume {
+    @include flex-center(column, center, space-between);
+    gap: $font-s;
+    .resume-items {
+      padding: 0 calc(5 * $font-xxl);
+      @include flex-center(row, flex-start, center);
+      &:nth-child(even) {
+        justify-content: flex-end;
+      }
+      .resume-card_wrapper {
+        width: 30%;
+        padding: $font-xm;
+        .resume-card_title {
+          font-size: $font-xm;
+        }
       }
     }
   }
