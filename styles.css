@@ -1,6 +1,9 @@
 /* Valeurs globales du site */
 /* --------- STYLE GENERAL DE LA PAGE --------- */
 body {
+  height: 105vh;
+  width: 100vw;
+  overflow-x: hidden;
   background-color: #1d1e22;
   background-image: url("./assets/herobackground.png");
   background-attachment: fixed;
@@ -257,4 +260,6 @@ section.parcours .parcours-resume .resume-items .resume-card_wrapper {
 }
 section.parcours .parcours-resume .resume-items .resume-card_wrapper .resume-card_title {
   font-size: 1.5rem;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

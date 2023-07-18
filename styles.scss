@@ -27,6 +27,9 @@ $global-vh: 15vh;
 /* --------- STYLE GENERAL DE LA PAGE --------- */
 
 body {
+  height: 105vh;
+  width: 100vw;
+  overflow-x: hidden;
   background-color: $black;
   background-image: url("./assets/herobackground.png");
   background-attachment: fixed;
