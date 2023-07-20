@@ -1,0 +1,33 @@
+/* --------- STYLE DE LA NAVBAR --------- */
+
+.header {
+  grid-area: header;
+  @include quick-flex(row, space-between, center);
+  gap: $font-xm;
+  padding: $font-s 0;
+  &__image {
+    height: calc($global-vh * 1.5);
+    margin-left: $font-l;
+  }
+
+  .main-nav {
+    &__list {
+      width: 65vw;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: $font-xxl;
+    }
+    &__link {
+      font-size: $font-s;
+      color: $white;
+      text-transform: uppercase;
+      transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

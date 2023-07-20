@@ -1,0 +1,129 @@
+/* --------- STYLE DE LA SECTION HERO --------- */
+
+section.hero {
+  grid-area: hero;
+  @include quick-flex(row, center, flex-start);
+  padding: 0 $font-xxl;
+  // padding-bottom: $font-l;
+  .hero_card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-areas:
+      "hero_title hero_title"
+      "hero_presentation-card hero_contact-card"
+      "hero_presentation-card hero_contact-card";
+    gap: $font-s;
+    .hero_card-title {
+      grid-area: hero_title;
+      @include quick-flex(column);
+      gap: $font-s;
+      font-size: $font-m;
+      text-transform: uppercase;
+    }
+    /* .hero_card:hover {
+      box-shadow: 0 0 $font-xs $orange;
+      transform: scale(1.05);
+    } */
+    .presentation-card {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      grid-template-rows: repeat(2, 1fr);
+      gap: $font-s;
+      grid-template-areas:
+        "avatar informations"
+        "socials socials";
+      .avatar_wrapper {
+        grid-area: avatar;
+        border-radius: 100%;
+        box-shadow: 0 0 0.25rem $orange;
+        @include quick-flex();
+        width: $global-vh;
+        height: $global-vh;
+        overflow: hidden;
+        margin: auto;
+        .avatar {
+          height: calc($global-vh * 1.75);
+        }
+      }
+      .informations_wrapper {
+        font-size: $font-s;
+        @include quick-flex(column, center, flex-start);
+        gap: $font-xs;
+        padding: $font-xs;
+        margin: auto;
+      }
+      .social-links_wrapper {
+        grid-area: socials;
+        @include quick-flex(column, space-between, flex-start);
+
+        .social-links_title {
+          font-size: $font-m;
+        }
+
+        .social-links_email {
+          font-size: $font-xs;
+          .link {
+            text-decoration: underline;
+          }
+        }
+
+        .social-links_list {
+          @include quick-flex(row, space-between, center);
+          flex-wrap: wrap;
+          gap: $font-xs;
+          width: 100%;
+        }
+        .bi {
+          height: $font-xl;
+          width: $font-xl;
+          color: $white;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+
+    .activity-card_charts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: $font-xxl;
+      grid-template-rows: 0.25fr 1.75fr;
+      grid-template-areas:
+        "Title Title"
+        "Languages TimeSpent";
+      gap: $font-m;
+
+      .activity-card_title {
+        grid-area: Title;
+        p {
+          font-size: $font-xs;
+          line-height: calc($font-s * 1.15);
+          text-align: end;
+        }
+      }
+      .activity-charts_wrapper {
+        @include quick-flex(column, center, space-between);
+        gap: $font-s;
+      }
+      .activity-charts {
+        border-radius: $font-xs;
+        height: calc(2.5 * $font-xxl);
+      }
+      .languages-chart {
+        grid-area: Languages;
+        // @include quick-flex(row, flex-start, flex-start);
+      }
+      .timespent-chart {
+        grid-area: TimeSpent;
+        // @include quick-flex(row, flex-end, flex-end);
+      }
+      .charts-caption {
+        text-align: center;
+        font-size: $font-s;
+        line-height: calc($font-s * 1.15);
+      }
+    }
+  }
+}
