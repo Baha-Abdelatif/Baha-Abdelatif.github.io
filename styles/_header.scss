@@ -17,13 +17,10 @@
   padding: 0;
   @include quick-flex(row, space-between, center);
   &__logo {
-    margin-left: $font-xs;
+    margin-left: $font-desktop-xs;
     height: $global-vh;
     width: calc($global-vh * 2.5);
-    background: url(../assets/AbDevWebLogoSM.svg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include quick-background("../assets/AbDevWebLogoSM.svg");
   }
 
   // ":has(+ input:checked)" Selectionne l'element qui a une balise soeur
@@ -52,12 +49,12 @@
     align-items: center;
     justify-content: space-between;
     @include quick-flex(column, space-between, center);
-    gap: $font-micro;
+    gap: $font-desktop-micro;
     &__toggle {
       height: calc(5vh / 5);
       width: 100%;
       background-color: $white;
-      border: $font-micro solid $white;
+      border: $font-desktop-micro solid $white;
       &:first-child {
         border-radius: 10px 10px 0 0;
       }
@@ -76,6 +73,8 @@
   }
   .main-nav {
     display: block;
+    height: 100vh;
+    background-color: $black;
     position: absolute;
     left: 0;
     right: 0;
@@ -84,6 +83,17 @@
     z-index: 10;
     transform: translateX(100vw);
     transition: all 0.5s ease-in-out;
+    &::after {
+      content: "AbDevWeb 2023 - Tous droits résérvés.";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: $font-desktop-m;
+      text-align: center;
+      font-size: $font-desktop-xs;
+    }
     &__list {
       @include quick-flex(column, space-between, stretch);
     }
@@ -93,12 +103,12 @@
       height: $global-vh;
       width: auto;
       background-color: $black;
-      font-size: $font-s;
+      font-size: $font-desktop-s;
       text-align: center;
       text-transform: uppercase;
       box-sizing: border-box;
       color: $white;
-      border-bottom: $font-micro solid $orange;
+      border-bottom: $font-desktop-micro solid $orange;
       transition: all 0.5 ease;
       &:hover {
         background-color: $orange;
@@ -166,11 +176,11 @@
 // .header {
 //   grid-area: header;
 //   @include quick-flex(row, space-between, center);
-//   gap: $font-xm;
-//   padding: $font-s 0;
+//   gap: $font-desktop-xm;
+//   padding: $font-desktop-s 0;
 //   &__image {
 //     height: calc($global-vh * 1.5);
-//     margin-left: $font-l;
+//     margin-left: $font-desktop-l;
 //   }
 
 //   .main-nav {
@@ -180,10 +190,10 @@
 //       display: flex;
 //       align-items: center;
 //       justify-content: space-between;
-//       margin-right: $font-xxl;
+//       margin-right: $font-desktop-xxl;
 //     }
 //     &__link {
-//       font-size: $font-s;
+//       font-size: $font-desktop-s;
 //       color: $white;
 //       text-transform: uppercase;
 //       transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;

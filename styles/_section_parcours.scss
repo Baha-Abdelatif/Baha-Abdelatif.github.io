@@ -3,27 +3,27 @@
 // section.parcours {
 //   grid-area: parcours;
 //   @include quick-flex(column, center, space-between);
-//   gap: $font-s;
-//   padding: 0 $font-xxl;
-//   padding-bottom: $font-l;
+//   gap: $font-desktop-s;
+//   padding: 0 $font-desktop-xxl;
+//   padding-bottom: $font-desktop-l;
 //   .parcours-title {
 //     text-align: center;
-//     font-size: $font-m;
+//     font-size: $font-desktop-m;
 //   }
 //   .parcours-resume {
 //     @include quick-flex(column, center, space-between);
-//     gap: $font-s;
+//     gap: $font-desktop-s;
 //     .resume-items {
-//       padding: 0 calc(5 * $font-xxl);
+//       padding: 0 calc(5 * $font-desktop-xxl);
 //       @include quick-flex(row, flex-start, center);
 //       &:nth-child(even) {
 //         justify-content: flex-end;
 //       }
 //       .resume-card_wrapper {
 //         width: 30%;
-//         padding: $font-xm;
+//         padding: $font-desktop-xm;
 //         .resume-card_title {
-//           font-size: $font-xm;
+//           font-size: $font-desktop-xm;
 //         }
 //       }
 //     }

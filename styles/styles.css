@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -82,7 +83,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   vertical-align: baseline;
 }
 
@@ -144,6 +144,11 @@ body {
   box-sizing: border-box;
 }
 
+section {
+  width: 100vw;
+  padding: 2rem;
+}
+
 .link {
   color: #128dfc;
   text-decoration: none;
@@ -165,7 +170,7 @@ body {
   background: linear-gradient(120deg, #1d1e22 0%, #1d1e22 100%) padding-box, linear-gradient(120deg, rgba(252, 163, 17, 0.5) 0%, rgba(255, 250, 250, 0.5) 50%, rgba(29, 30, 34, 0.5) 100%) border-box;
   border: 0.125rem solid transparent;
   border-radius: 1rem;
-  padding: 2.5rem;
+  padding: 1.25rem;
   transition: background 0.75s ease-in-out;
 }
 .border-box:hover {
@@ -222,7 +227,7 @@ body {
   margin-left: 1rem;
   height: 10vh;
   width: 25vh;
-  background: url(../assets/AbDevWebLogoSM.svg);
+  background-image: url("../assets/AbDevWebLogoSM.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -287,6 +292,8 @@ body {
 }
 .header .main-nav {
   display: block;
+  height: 100vh;
+  background-color: #1d1e22;
   position: absolute;
   left: 0;
   right: 0;
@@ -295,6 +302,17 @@ body {
   z-index: 10;
   transform: translateX(100vw);
   transition: all 0.5s ease-in-out;
+}
+.header .main-nav::after {
+  content: "AbDevWeb 2023 - Tous droits résérvés.";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 2rem;
+  text-align: center;
+  font-size: 1rem;
 }
 .header .main-nav__list {
   display: flex;
@@ -325,4 +343,81 @@ body {
   transition: all 0.5 ease;
 }
 
-/* --------- STYLE DE LA SECTION HERO --------- */ /* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */
+/* --------- STYLE DE LA SECTION HERO --------- */
+.hero__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1.25rem;
+}
+.hero__cards__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+}
+.hero__cards__title__headline {
+  font-size: 2rem;
+}
+.hero__cards__title__tagline {
+  font-size: 1rem;
+}
+.hero__cards .presentation {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "Avatar Infos" "Socials Socials";
+  gap: 1rem;
+}
+.hero__cards .presentation__avatar {
+  grid-area: Avatar;
+  border-radius: 100%;
+  padding: 0;
+  overflow: hidden;
+  width: 12.5vh;
+  margin: auto;
+  height: 12.5vh;
+}
+.hero__cards .presentation__avatar__img {
+  width: 12.5vh;
+  height: 12.5vh;
+}
+.hero__cards .presentation__informations {
+  grid-area: Infos;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hero__cards .presentation__informations h3,
+.hero__cards .presentation__informations p {
+  font-size: 0.8474576271rem;
+}
+.hero__cards .presentation__socials {
+  grid-area: Socials;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hero__cards .presentation__socials .social-links_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
+  gap: 1rem;
+}
+.hero__cards .presentation__socials .social-links_list .socials {
+  color: snow;
+}
+.hero__cards .presentation__socials .social-links_list .socials:hover {
+  color: #fca311;
+}
+.hero__cards .presentation__socials .social-links_list .socials .bi {
+  height: 2.5vh;
+}
+
+/* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */

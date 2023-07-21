@@ -6,14 +6,14 @@ $orange: #fca311ff;
 $platinum: #e5e5e5ff;
 $white: #fffafaff;
 
-$font-xxl: 5rem;
-$font-xl: 3rem;
-$font-l: 2.5rem;
-$font-m: 2rem;
-$font-xm: 1.5rem;
-$font-s: 1.25rem;
-$font-xs: 1rem;
-$font-micro: 0.125rem;
+$font-desktop-xxl: 5rem;
+$font-desktop-xl: 3rem;
+$font-desktop-l: 2.5rem;
+$font-desktop-m: 2rem;
+$font-desktop-xm: 1.5rem;
+$font-desktop-s: 1.25rem;
+$font-desktop-xs: 1rem;
+$font-desktop-micro: 0.125rem;
 
 $global-vh: 10vh;
 
@@ -34,6 +34,13 @@ $grid-breakpoints: (
   align-items: $alignment;
 }
 
+@mixin quick-background($url) {
+  background-image: url($url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 // General Styles
 body {
   width: 100vw;
@@ -49,6 +56,10 @@ body {
   padding: 0;
   @include quick-flex(column, flex-start, center);
   box-sizing: border-box;
+}
+section {
+  width: 100vw;
+  padding: $font-desktop-m;
 }
 .link {
   color: $blue;
@@ -81,9 +92,9 @@ body {
         rgba($black, 0.5) 100%
       )
       border-box;
-  border: $font-micro solid transparent;
-  border-radius: $font-xs;
-  padding: $font-l;
+  border: $font-desktop-micro solid transparent;
+  border-radius: $font-desktop-xs;
+  padding: $font-desktop-s;
   transition: background 0.75s ease-in-out;
 
   &:hover {
@@ -104,7 +115,7 @@ body {
     display: block;
     top: $global-vh;
     content: " ";
-    height: $font-micro;
+    height: $font-desktop-micro;
     width: 100%;
     background: linear-gradient(120deg, $orange 0%, $white 75%, $black 100%);
     box-shadow: 0px 0px 5px 1px $orange;
