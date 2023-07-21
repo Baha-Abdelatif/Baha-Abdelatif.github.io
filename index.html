@@ -23,13 +23,31 @@
 <body>
   <header class="filled-background shadowline header">
     <div class="header__logo">
-      <img
+      <!-- <img
         src="./assets/AbDevWebLogo.svg"
         alt="Logo AbDevWeb"
-        class="header__image"
+        class="header__image--large"
       />
+      <img
+        src="./assets/AbDevWebLogoSM.svg"
+        alt="Logo AbDevWeb"
+        class="header__image--small"
+      /> -->
     </div>
 
+    <label
+      for="Header__burger-menu"
+      class="header_menu-toggle"
+    >
+      <span class="header_menu-toggle__toggle"></span>
+      <span class="header_menu-toggle__toggle"></span>
+      <span class="header_menu-toggle__toggle"></span>
+    </label>
+    <input
+      type="checkbox"
+      name="header__burger-menu"
+      id="Header__burger-menu"
+    >
     <nav class="main-nav">
       <ul class="main-nav__list">
         <li class="main-nav__item">

@@ -15,7 +15,16 @@ $font-s: 1.25rem;
 $font-xs: 1rem;
 $font-micro: 0.125rem;
 
-$global-vh: 15vh;
+$global-vh: 10vh;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
 
 // mixin pour eviter de repeter les regles du quick-flex
 @mixin quick-flex($direction: row, $justify: center, $alignment: center) {
@@ -24,10 +33,9 @@ $global-vh: 15vh;
   justify-content: $justify;
   align-items: $alignment;
 }
-/* --------- STYLE GENERAL DE LA PAGE --------- */
 
+// General Styles
 body {
-  height: 105vh;
   width: 100vw;
   overflow-x: hidden;
   background-color: $black;
@@ -39,19 +47,9 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: $global-vh 85vh repeat(3, 1fr) 30vh;
-  gap: $font-m;
-  grid-template-areas:
-    "header header"
-    "hero hero"
-    "parcours parcours"
-    "projets projets"
-    "about about"
-    "contact contact";
+  @include quick-flex(column, flex-start, center);
+  box-sizing: border-box;
 }
-
 .link {
   color: $blue;
   text-decoration: none;
@@ -110,5 +108,43 @@ body {
     width: 100%;
     background: linear-gradient(120deg, $orange 0%, $white 75%, $black 100%);
     box-shadow: 0px 0px 5px 1px $orange;
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  body {
+    background-color: $black;
   }
 }

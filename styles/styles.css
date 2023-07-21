@@ -125,9 +125,7 @@ table {
 }
 
 /* Variables globales du site */
-/* --------- STYLE GENERAL DE LA PAGE --------- */
 body {
-  height: 105vh;
   width: 100vw;
   overflow-x: hidden;
   background-color: #1d1e22;
@@ -139,11 +137,11 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 15vh 85vh repeat(3, 1fr) 30vh;
-  gap: 2rem;
-  grid-template-areas: "header header" "hero hero" "parcours parcours" "projets projets" "about about" "contact contact";
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .link {
@@ -177,7 +175,7 @@ body {
 .shadowline::after {
   position: absolute;
   display: block;
-  top: 15vh;
+  top: 10vh;
   content: " ";
   height: 0.125rem;
   width: 100%;
@@ -185,209 +183,146 @@ body {
   box-shadow: 0px 0px 5px 1px #fca311;
 }
 
+@media (min-width: 576px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
 /* --------- STYLE DE LA NAVBAR --------- */
 .header {
-  grid-area: header;
+  width: 100vw;
+  height: 10vh;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.25rem 0;
 }
-.header__image {
-  height: 22.5vh;
-  margin-left: 2.5rem;
+.header__logo {
+  margin-left: 1rem;
+  height: 10vh;
+  width: 25vh;
+  background: url(../assets/AbDevWebLogoSM.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle:first-child {
+  transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  top: 2.5vh;
+  background-color: #fca311;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle:last-child {
+  transform: rotate(-45deg);
+  display: block;
+  position: absolute;
+  top: 2.5vh;
+  background-color: #fca311;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle {
+  z-index: 100;
+  position: absolute;
+  right: 2.5vh;
+  top: 2.5vh;
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.125rem;
+}
+.header .header_menu-toggle__toggle {
+  height: 1vh;
+  width: 100%;
+  background-color: snow;
+  border: 0.125rem solid snow;
+}
+.header .header_menu-toggle__toggle:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.header .header_menu-toggle__toggle:last-child {
+  border-radius: 0 0 10px 10px;
+}
+.header #Header__burger-menu {
+  display: none;
+}
+.header #Header__burger-menu:checked + .main-nav {
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+.header .main-nav {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
 }
 .header .main-nav__list {
-  width: 65vw;
-  list-style: none;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  margin-right: 5rem;
+  align-items: stretch;
 }
 .header .main-nav__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 10vh;
+  width: auto;
+  background-color: #1d1e22;
   font-size: 1.25rem;
-  color: snow;
+  text-align: center;
   text-transform: uppercase;
-  transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+  box-sizing: border-box;
+  color: snow;
+  border-bottom: 0.125rem solid #fca311;
+  transition: all 0.5 ease;
 }
 .header .main-nav__link:hover {
-  color: #fca311;
-}
-
-/* --------- STYLE DE LA SECTION HERO --------- */
-section.hero {
-  grid-area: hero;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 5rem;
-}
-section.hero .hero_card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.5fr 1.5fr;
-  grid-template-areas: "hero_title hero_title" "hero_presentation-card hero_contact-card" "hero_presentation-card hero_contact-card";
-  gap: 1.25rem;
-  /* .hero_card:hover {
-    box-shadow: 0 0 $font-xs $orange;
-    transform: scale(1.05);
-  } */
-}
-section.hero .hero_card-wrapper .hero_card-title {
-  grid-area: hero_title;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-section.hero .hero_card-wrapper .presentation-card {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.25rem;
-  grid-template-areas: "avatar informations" "socials socials";
-}
-section.hero .hero_card-wrapper .presentation-card .avatar_wrapper {
-  grid-area: avatar;
-  border-radius: 100%;
-  box-shadow: 0 0 0.25rem #fca311;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 15vh;
-  height: 15vh;
-  overflow: hidden;
-  margin: auto;
-}
-section.hero .hero_card-wrapper .presentation-card .avatar_wrapper .avatar {
-  height: 26.25vh;
-}
-section.hero .hero_card-wrapper .presentation-card .informations_wrapper {
-  font-size: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem;
-  margin: auto;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper {
-  grid-area: socials;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_title {
-  font-size: 2rem;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email {
-  font-size: 1rem;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email .link {
-  text-decoration: underline;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi {
-  height: 3rem;
-  width: 3rem;
+  background-color: #fca311;
   color: snow;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi:hover {
-  color: #fca311;
-}
-section.hero .hero_card-wrapper .activity-card_charts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 5rem;
-  grid-template-rows: 0.25fr 1.75fr;
-  grid-template-areas: "Title Title" "Languages TimeSpent";
-  gap: 2rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-card_title {
-  grid-area: Title;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-card_title p {
-  font-size: 1rem;
-  line-height: 1.4375rem;
-  text-align: end;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-charts_wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-charts {
-  border-radius: 1rem;
-  height: 12.5rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .languages-chart {
-  grid-area: Languages;
-}
-section.hero .hero_card-wrapper .activity-card_charts .timespent-chart {
-  grid-area: TimeSpent;
-}
-section.hero .hero_card-wrapper .activity-card_charts .charts-caption {
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.4375rem;
+  border-color: snow;
+  transition: all 0.5 ease;
 }
 
-/* --------- STYLE DE LA SECTION PARCOURS --------- */
-section.parcours {
-  grid-area: parcours;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-  padding: 0 5rem;
-  padding-bottom: 2.5rem;
-}
-section.parcours .parcours-title {
-  text-align: center;
-  font-size: 2rem;
-}
-section.parcours .parcours-resume {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-}
-section.parcours .parcours-resume .resume-items {
-  padding: 0 25rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-section.parcours .parcours-resume .resume-items:nth-child(even) {
-  justify-content: flex-end;
-}
-section.parcours .parcours-resume .resume-items .resume-card_wrapper {
-  width: 30%;
-  padding: 1.5rem;
-}
-section.parcours .parcours-resume .resume-items .resume-card_wrapper .resume-card_title {
-  font-size: 1.5rem;
-}/*# sourceMappingURL=styles.css.map */
+/* --------- STYLE DE LA SECTION HERO --------- */ /* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */
