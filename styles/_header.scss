@@ -82,7 +82,7 @@
     bottom: 0;
     z-index: 10;
     transform: translateX(100vw);
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     &::after {
       content: "AbDevWeb 2023 - Tous droits résérvés.";
       display: block;
