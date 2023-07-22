@@ -363,9 +363,9 @@ section {
 }
 .hero__presentation {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "Avatar Infos" "Socials Socials";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "Infos" "Avatar" "Socials";
   gap: 1rem;
 }
 .hero__presentation__avatar {
@@ -373,13 +373,13 @@ section {
   border-radius: 100%;
   padding: 0;
   overflow: hidden;
-  width: 12.5vh;
   margin: auto;
-  height: 12.5vh;
+  width: 20vh;
+  height: 20vh;
 }
 .hero__presentation__avatar__img {
-  width: 12.5vh;
-  height: 12.5vh;
+  width: 20vh;
+  height: 20vh;
 }
 .hero__presentation__informations {
   grid-area: Infos;
@@ -387,7 +387,8 @@ section {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  font-size: 0.9090909091rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 .hero__presentation__socials {
   grid-area: Socials;
@@ -423,8 +424,8 @@ section {
 .hero__activity {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.25fr 1.75fr;
-  grid-template-areas: "Title Title" "Languages TimeSpent";
+  grid-template-rows: 0.25fr repeat(2, 1fr);
+  grid-template-areas: "Title Title" "Languages Languages" "TimeSpent TimeSpent";
   gap: 1rem;
 }
 .hero__activity__title {

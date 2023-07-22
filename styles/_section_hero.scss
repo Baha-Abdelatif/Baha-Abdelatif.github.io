@@ -13,31 +13,32 @@
   }
   &__presentation {
     display: grid;
-    grid-template-columns: 0.5fr 1.5fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      "Avatar Infos"
-      "Socials Socials";
+      "Infos"
+      "Avatar"
+      "Socials";
     gap: $font-desktop-xs;
     &__avatar {
+      // display: none;
       grid-area: Avatar;
       border-radius: 100%;
       padding: 0;
       overflow: hidden;
-      width: 12.5vh;
       margin: auto;
-      height: 12.5vh;
+      width: calc($global-vh * 2);
+      height: calc($global-vh * 2);
       &__img {
-        // height: 15vh;
-        // width: 15vh;
-        width: 12.5vh;
-        height: 12.5vh;
+        width: calc($global-vh * 2);
+        height: calc($global-vh * 2);
       }
     }
     &__informations {
       grid-area: Infos;
       @include quick-flex(column, space-between, flex-start);
-      font-size: calc($font-desktop-xs / 1.1);
+      font-size: calc($font-desktop-xs / 1);
+      line-height: calc($font-desktop-xs * 1.2);
     }
     &__socials {
       grid-area: Socials;
@@ -71,10 +72,11 @@
   &__activity {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 0.25fr 1.75fr;
+    grid-template-rows: 0.25fr repeat(2, 1fr);
     grid-template-areas:
       "Title Title"
-      "Languages TimeSpent";
+      "Languages Languages"
+      "TimeSpent TimeSpent";
     gap: $font-desktop-xs;
     &__title {
       grid-area: Title;
