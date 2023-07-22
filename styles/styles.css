@@ -145,8 +145,12 @@ body {
 }
 
 section {
-  width: 100vw;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1rem;
 }
 
 .link {
@@ -344,35 +348,27 @@ section {
 }
 
 /* --------- STYLE DE LA SECTION HERO --------- */
-.hero__cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 1rem;
-  margin: 1.25rem;
-}
-.hero__cards__title {
+.hero__title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
 }
-.hero__cards__title__headline {
+.hero__title__headline {
   font-size: 2rem;
 }
-.hero__cards__title__tagline {
+.hero__title__tagline {
   font-size: 1rem;
 }
-.hero__cards .presentation {
+.hero__presentation {
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "Avatar Infos" "Socials Socials";
   gap: 1rem;
 }
-.hero__cards .presentation__avatar {
+.hero__presentation__avatar {
   grid-area: Avatar;
   border-radius: 100%;
   padding: 0;
@@ -381,43 +377,72 @@ section {
   margin: auto;
   height: 12.5vh;
 }
-.hero__cards .presentation__avatar__img {
+.hero__presentation__avatar__img {
   width: 12.5vh;
   height: 12.5vh;
 }
-.hero__cards .presentation__informations {
+.hero__presentation__informations {
   grid-area: Infos;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 0.9090909091rem;
 }
-.hero__cards .presentation__informations h3,
-.hero__cards .presentation__informations p {
-  font-size: 0.8474576271rem;
-}
-.hero__cards .presentation__socials {
+.hero__presentation__socials {
   grid-area: Socials;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 1rem;
 }
-.hero__cards .presentation__socials .social-links_list {
+.hero__presentation__socials .social-links__title {
+  font-size: 1.25rem;
+}
+.hero__presentation__socials .social-links__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: space-between;
   gap: 1rem;
 }
-.hero__cards .presentation__socials .social-links_list .socials {
+.hero__presentation__socials .social-links__list .socials {
   color: snow;
 }
-.hero__cards .presentation__socials .social-links_list .socials:hover {
+.hero__presentation__socials .social-links__list .socials:hover {
   color: #fca311;
 }
-.hero__cards .presentation__socials .social-links_list .socials .bi {
-  height: 2.5vh;
+.hero__presentation__socials .social-links__list .socials .bi {
+  height: 1.25rem;
+}
+.hero__presentation__socials .social-links__email {
+  font-size: 0.9090909091rem;
+  line-height: 1rem;
+}
+.hero__activity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.25fr 1.75fr;
+  grid-template-areas: "Title Title" "Languages TimeSpent";
+  gap: 1rem;
+}
+.hero__activity__title {
+  grid-area: Title;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.hero__activity__wrapper-caption {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.hero__activity__wrapper-languages {
+  grid-area: Languages;
+  background-color: yellow;
+}
+.hero__activity__wrapper-timespent {
+  grid-area: TimeSpent;
+  background-color: blue;
 }
 
 /* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */

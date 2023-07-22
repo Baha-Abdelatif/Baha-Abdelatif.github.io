@@ -58,8 +58,10 @@ body {
   box-sizing: border-box;
 }
 section {
-  width: 100vw;
-  padding: $font-desktop-m;
+  // padding: $font-desktop-xs 0;
+  @include quick-flex(column, space-between, stretch);
+  gap: $font-desktop-xs;
+  margin: $font-desktop-xs;
 }
 .link {
   color: $blue;

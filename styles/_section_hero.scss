@@ -1,9 +1,6 @@
 /* --------- STYLE DE LA SECTION HERO --------- */
 
-.hero__cards {
-  @include quick-flex(column, space-between, stretch);
-  gap: $font-desktop-xs;
-  margin: $font-desktop-s;
+.hero {
   &__title {
     @include quick-flex(column, space-between, stretch);
     gap: $font-desktop-m;
@@ -14,7 +11,7 @@
       font-size: $font-desktop-xs;
     }
   }
-  .presentation {
+  &__presentation {
     display: grid;
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: repeat(2, 1fr);
@@ -36,31 +33,66 @@
         width: 12.5vh;
         height: 12.5vh;
       }
-      // @include quick-background("../assets/avatar.png");
     }
     &__informations {
       grid-area: Infos;
-      h3,
-      p {
-        font-size: calc($font-desktop-xs / 1.18);
-      }
       @include quick-flex(column, space-between, flex-start);
+      font-size: calc($font-desktop-xs / 1.1);
     }
     &__socials {
       grid-area: Socials;
       @include quick-flex(column, space-between, flex-start);
-      .social-links_list {
-        @include quick-flex(row, center, space-between);
-        gap: $font-desktop-xs;
-        .socials {
-          color: $white;
-          &:hover {
-            color: $orange;
-          }
-          .bi {
-            height: 2.5vh;
+      gap: $font-desktop-xs;
+      .social-links {
+        &__title {
+          font-size: $font-desktop-s;
+        }
+        &__list {
+          @include quick-flex(row, center, space-between);
+          gap: $font-desktop-xs;
+          .socials {
+            color: $white;
+            &:hover {
+              color: $orange;
+            }
+            .bi {
+              height: $font-desktop-s;
+            }
           }
         }
+        &__email {
+          font-size: calc($font-desktop-xs / 1.1);
+          line-height: $font-desktop-xs;
+        }
+      }
+    }
+  }
+
+  &__activity {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.25fr 1.75fr;
+    grid-template-areas:
+      "Title Title"
+      "Languages TimeSpent";
+    gap: $font-desktop-xs;
+    &__title {
+      grid-area: Title;
+      font-size: $font-desktop-xs;
+      line-height: calc($font-desktop-xs * 1.25);
+    }
+    &__wrapper {
+      &-caption {
+        font-size: $font-desktop-xs;
+        line-height: calc($font-desktop-xs * 1.25);
+      }
+      &-languages {
+        grid-area: Languages;
+        background-color: yellow;
+      }
+      &-timespent {
+        grid-area: TimeSpent;
+        background-color: blue;
       }
     }
   }
