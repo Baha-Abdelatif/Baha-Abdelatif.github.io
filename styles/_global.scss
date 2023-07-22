@@ -42,9 +42,12 @@ $grid-breakpoints: (
 }
 
 // General Styles
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   width: 100vw;
-  overflow-x: hidden;
   background-color: $black;
   background-image: url("../assets/herobackground.png");
   background-attachment: fixed;

@@ -125,9 +125,13 @@ table {
 }
 
 /* Variables globales du site */
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   width: 100vw;
-  overflow-x: hidden;
   background-color: #1d1e22;
   background-image: url("../assets/herobackground.png");
   background-attachment: fixed;
