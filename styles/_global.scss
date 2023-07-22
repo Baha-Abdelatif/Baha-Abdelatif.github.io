@@ -1,119 +1,3 @@
-<<<<<<< HEAD
-/* Variables globales du site */
-
-$black: #1d1e22ff;
-$blue: #128dfc;
-$orange: #fca311ff;
-$platinum: #e5e5e5ff;
-$white: #fffafaff;
-
-$font-xxl: 5rem;
-$font-xl: 3rem;
-$font-l: 2.5rem;
-$font-m: 2rem;
-$font-xm: 1.5rem;
-$font-s: 1.25rem;
-$font-xs: 1rem;
-$font-micro: 0.125rem;
-
-$global-vh: 15vh;
-
-// mixin pour eviter de repeter les regles du quick-flex
-@mixin quick-flex($direction: row, $justify: center, $alignment: center) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $alignment;
-}
-/* --------- STYLE GENERAL DE LA PAGE --------- */
-
-body {
-  height: 105vh;
-  width: 100vw;
-  overflow-x: hidden;
-  background-color: $black;
-  background-image: url("../assets/herobackground.png");
-  background-attachment: fixed;
-  color: $white;
-  font-size: 62.5%;
-  line-height: 1;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: $global-vh 85vh repeat(3, 1fr) 30vh;
-  gap: $font-m;
-  grid-template-areas:
-    "header header"
-    "hero hero"
-    "parcours parcours"
-    "projets projets"
-    "about about"
-    "contact contact";
-}
-
-.link {
-  color: $blue;
-  text-decoration: none;
-  transition: all 0.25s ease-in-out;
-
-  &:hover {
-    color: $orange;
-  }
-}
-
-.colored-text {
-  color: $orange;
-}
-.filled-background {
-  background-image: linear-gradient(120deg, $black 0%, $black 100%),
-    linear-gradient(
-      120deg,
-      rgba($orange, 0.5) 0%,
-      rgba($white, 0.5) 50%,
-      rgba($black, 0.5) 100%
-    );
-}
-.border-box {
-  background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
-    linear-gradient(
-        120deg,
-        rgba($orange, 0.5) 0%,
-        rgba($white, 0.5) 50%,
-        rgba($black, 0.5) 100%
-      )
-      border-box;
-  border: $font-micro solid transparent;
-  border-radius: $font-xs;
-  padding: $font-l;
-  transition: background 0.75s ease-in-out;
-
-  &:hover {
-    background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
-      linear-gradient(
-          120deg,
-          rgba($orange, 0.5) 0%,
-          rgba($white, 0.5) 50%,
-          rgba($black, 0.5) 100%
-        )
-        border-box,
-      $blue;
-  }
-}
-.shadowline {
-  &::after {
-    position: absolute;
-    display: block;
-    top: $global-vh;
-    content: " ";
-    height: $font-micro;
-    width: 100%;
-    background: linear-gradient(120deg, $orange 0%, $white 75%, $black 100%);
-    box-shadow: 0px 0px 5px 1px $orange;
-  }
-}
-=======
 /* Variables globales du site */
 
 $black: #1d1e22ff;
@@ -188,7 +72,6 @@ section {
     color: $orange;
   }
 }
-
 .colored-text {
   color: $orange;
 }
@@ -277,4 +160,3 @@ section {
     background-color: $black;
   }
 }
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3

@@ -1,5 +1,4 @@
 /* --------- STYLE DE LA SECTION HERO --------- */
-
 .hero {
   &__title {
     @include quick-flex(column, space-between, stretch);

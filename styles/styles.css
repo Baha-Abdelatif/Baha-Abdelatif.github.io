@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 @charset "UTF-8";
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
 html,
 body,
 div,
@@ -86,10 +83,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-<<<<<<< HEAD
-  font-size: 100%;
-=======
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   vertical-align: baseline;
 }
 
@@ -132,13 +125,7 @@ table {
 }
 
 /* Variables globales du site */
-<<<<<<< HEAD
-/* --------- STYLE GENERAL DE LA PAGE --------- */
 body {
-  height: 105vh;
-=======
-body {
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   width: 100vw;
   overflow-x: hidden;
   background-color: #1d1e22;
@@ -150,13 +137,6 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 15vh 85vh repeat(3, 1fr) 30vh;
-  gap: 2rem;
-  grid-template-areas: "header header" "hero hero" "parcours parcours" "projets projets" "about about" "contact contact";
-=======
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -171,7 +151,6 @@ section {
   align-items: stretch;
   gap: 1rem;
   margin: 1rem;
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
 }
 
 .link {
@@ -195,11 +174,7 @@ section {
   background: linear-gradient(120deg, #1d1e22 0%, #1d1e22 100%) padding-box, linear-gradient(120deg, rgba(252, 163, 17, 0.5) 0%, rgba(255, 250, 250, 0.5) 50%, rgba(29, 30, 34, 0.5) 100%) border-box;
   border: 0.125rem solid transparent;
   border-radius: 1rem;
-<<<<<<< HEAD
-  padding: 2.5rem;
-=======
   padding: 1.25rem;
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   transition: background 0.75s ease-in-out;
 }
 .border-box:hover {
@@ -209,11 +184,7 @@ section {
 .shadowline::after {
   position: absolute;
   display: block;
-<<<<<<< HEAD
-  top: 15vh;
-=======
   top: 10vh;
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   content: " ";
   height: 0.125rem;
   width: 100%;
@@ -221,11 +192,6 @@ section {
   box-shadow: 0px 0px 5px 1px #fca311;
 }
 
-<<<<<<< HEAD
-/* --------- STYLE DE LA NAVBAR --------- */
-.header {
-  grid-area: header;
-=======
 @media (min-width: 576px) {
   body {
     background-color: #1d1e22;
@@ -256,212 +222,10 @@ section {
   width: 100vw;
   height: 10vh;
   padding: 0;
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-<<<<<<< HEAD
-  gap: 1.5rem;
-  padding: 1.25rem 0;
-}
-.header__image {
-  height: 22.5vh;
-  margin-left: 2.5rem;
-}
-.header .main-nav__list {
-  width: 65vw;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 5rem;
-}
-.header .main-nav__link {
-  font-size: 1.25rem;
-  color: snow;
-  text-transform: uppercase;
-  transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
-}
-.header .main-nav__link:hover {
-  color: #fca311;
-}
-
-/* --------- STYLE DE LA SECTION HERO --------- */
-section.hero {
-  grid-area: hero;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 5rem;
-}
-section.hero .hero_card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.5fr 1.5fr;
-  grid-template-areas: "hero_title hero_title" "hero_presentation-card hero_contact-card" "hero_presentation-card hero_contact-card";
-  gap: 1.25rem;
-  /* .hero_card:hover {
-    box-shadow: 0 0 $font-xs $orange;
-    transform: scale(1.05);
-  } */
-}
-section.hero .hero_card-wrapper .hero_card-title {
-  grid-area: hero_title;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-section.hero .hero_card-wrapper .presentation-card {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.25rem;
-  grid-template-areas: "avatar informations" "socials socials";
-}
-section.hero .hero_card-wrapper .presentation-card .avatar_wrapper {
-  grid-area: avatar;
-  border-radius: 100%;
-  box-shadow: 0 0 0.25rem #fca311;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 15vh;
-  height: 15vh;
-  overflow: hidden;
-  margin: auto;
-}
-section.hero .hero_card-wrapper .presentation-card .avatar_wrapper .avatar {
-  height: 26.25vh;
-}
-section.hero .hero_card-wrapper .presentation-card .informations_wrapper {
-  font-size: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem;
-  margin: auto;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper {
-  grid-area: socials;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_title {
-  font-size: 2rem;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email {
-  font-size: 1rem;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_email .link {
-  text-decoration: underline;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .social-links_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi {
-  height: 3rem;
-  width: 3rem;
-  color: snow;
-}
-section.hero .hero_card-wrapper .presentation-card .social-links_wrapper .bi:hover {
-  color: #fca311;
-}
-section.hero .hero_card-wrapper .activity-card_charts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 5rem;
-  grid-template-rows: 0.25fr 1.75fr;
-  grid-template-areas: "Title Title" "Languages TimeSpent";
-  gap: 2rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-card_title {
-  grid-area: Title;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-card_title p {
-  font-size: 1rem;
-  line-height: 1.4375rem;
-  text-align: end;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-charts_wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .activity-charts {
-  border-radius: 1rem;
-  height: 12.5rem;
-}
-section.hero .hero_card-wrapper .activity-card_charts .languages-chart {
-  grid-area: Languages;
-}
-section.hero .hero_card-wrapper .activity-card_charts .timespent-chart {
-  grid-area: TimeSpent;
-}
-section.hero .hero_card-wrapper .activity-card_charts .charts-caption {
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.4375rem;
-}
-
-/* --------- STYLE DE LA SECTION PARCOURS --------- */
-section.parcours {
-  grid-area: parcours;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-  padding: 0 5rem;
-  padding-bottom: 2.5rem;
-}
-section.parcours .parcours-title {
-  text-align: center;
-  font-size: 2rem;
-}
-section.parcours .parcours-resume {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  gap: 1.25rem;
-}
-section.parcours .parcours-resume .resume-items {
-  padding: 0 25rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-section.parcours .parcours-resume .resume-items:nth-child(even) {
-  justify-content: flex-end;
-}
-section.parcours .parcours-resume .resume-items .resume-card_wrapper {
-  width: 30%;
-  padding: 1.5rem;
-}
-section.parcours .parcours-resume .resume-items .resume-card_wrapper .resume-card_title {
-  font-size: 1.5rem;
-}/*# sourceMappingURL=styles.css.map */
-=======
 }
 .header__logo {
   margin-left: 1rem;
@@ -683,4 +447,3 @@ section.parcours .parcours-resume .resume-items .resume-card_wrapper .resume-car
 }
 
 /* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */
->>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
