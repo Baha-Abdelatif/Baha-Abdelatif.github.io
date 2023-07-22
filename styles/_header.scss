@@ -1,33 +1,206 @@
+// Mixin chargée du comportement du menu burger
+@mixin burger-toggle($angle) {
+  transform: rotate($angle);
+  display: block;
+  position: absolute;
+  top: 2.5vh;
+  background-color: $orange;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
 /* --------- STYLE DE LA NAVBAR --------- */
 
 .header {
-  grid-area: header;
+  width: 100vw;
+  height: $global-vh;
+  padding: 0;
   @include quick-flex(row, space-between, center);
-  gap: $font-xm;
-  padding: $font-s 0;
-  &__image {
-    height: calc($global-vh * 1.5);
-    margin-left: $font-l;
+  &__logo {
+    margin-left: $font-desktop-xs;
+    height: $global-vh;
+    width: calc($global-vh * 2.5);
+    @include quick-background("../assets/AbDevWebLogoSM.svg");
   }
 
-  .main-nav {
-    &__list {
-      width: 65vw;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-right: $font-xxl;
+  // ":has(+ input:checked)" Selectionne l'element qui a une balise soeur
+  // correspondant a un input:checked
+  .header_menu-toggle:has(+ #Header__burger-menu:checked) {
+    .header_menu-toggle__toggle {
+      display: none;
+      transition: all 0.5s ease-in-out;
+      &:first-child {
+        @include burger-toggle(45deg);
+      }
+      &:last-child {
+        @include burger-toggle(-45deg);
+      }
     }
-    &__link {
-      font-size: $font-s;
-      color: $white;
-      text-transform: uppercase;
-      transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+  }
+  .header_menu-toggle {
+    z-index: 100;
+    position: absolute;
+    right: 2.5vh;
+    top: 2.5vh;
+    width: 5vh;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    @include quick-flex(column, space-between, center);
+    gap: $font-desktop-micro;
+    &__toggle {
+      height: calc(5vh / 5);
+      width: 100%;
+      background-color: $white;
+      border: $font-desktop-micro solid $white;
+      &:first-child {
+        border-radius: 10px 10px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  }
+  #Header__burger-menu {
+    display: none;
+    // Decale le menu lorsque le burger s'active
+    &:checked + .main-nav {
+      transform: translateX(0);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .main-nav {
+    display: block;
+    height: 100vh;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    transform: translateX(100vw);
+    transition: all 0.5s ease-in-out;
+    &::after {
+      content: "AbDevWeb 2023 - Tous droits résérvés.";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: $font-desktop-m;
+      text-align: center;
+      font-size: $font-desktop-xs;
+    }
+    &__list {
+      @include quick-flex(column, space-between, stretch);
+    }
 
+    &__link {
+      @include quick-flex(column, center, stretch);
+      height: $global-vh;
+      width: auto;
+      background-color: $black;
+      font-size: $font-desktop-s;
+      text-align: center;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      color: $white;
+      border-bottom: $font-desktop-micro solid $orange;
+      transition: all 0.5 ease;
       &:hover {
-        color: $orange;
+        background-color: $orange;
+        color: $white;
+        border-color: $white;
+        transition: all 0.5 ease;
       }
     }
   }
 }
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+//   .header{
+
+//   }
+//   .main-nav {
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     &__link {
+//       width: auto;
+//     }
+//   }
+// }
+
+// .header {
+//   grid-area: header;
+//   @include quick-flex(row, space-between, center);
+//   gap: $font-desktop-xm;
+//   padding: $font-desktop-s 0;
+//   &__image {
+//     height: calc($global-vh * 1.5);
+//     margin-left: $font-desktop-l;
+//   }
+
+//   .main-nav {
+//     &__list {
+//       width: 65vw;
+//       list-style: none;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       margin-right: $font-desktop-xxl;
+//     }
+//     &__link {
+//       font-size: $font-desktop-s;
+//       color: $white;
+//       text-transform: uppercase;
+//       transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+
+//       &:hover {
+//         color: $orange;
+//       }
+//     }
+//   }
+// }

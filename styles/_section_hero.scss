@@ -1,129 +1,267 @@
 /* --------- STYLE DE LA SECTION HERO --------- */
 
-section.hero {
-  grid-area: hero;
-  @include quick-flex(row, center, flex-start);
-  padding: 0 $font-xxl;
-  // padding-bottom: $font-l;
-  .hero_card-wrapper {
+.hero {
+  &__title {
+    @include quick-flex(column, space-between, stretch);
+    gap: $font-desktop-m;
+    &__headline {
+      font-size: $font-desktop-m;
+    }
+    &__tagline {
+      font-size: $font-desktop-xs;
+    }
+  }
+  &__presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "Infos"
+      "Avatar"
+      "Socials";
+    gap: $font-desktop-xs;
+    &__avatar {
+      // display: none;
+      grid-area: Avatar;
+      border-radius: 100%;
+      padding: 0;
+      overflow: hidden;
+      margin: auto;
+      width: calc($global-vh * 2);
+      height: calc($global-vh * 2);
+      &__img {
+        width: calc($global-vh * 2);
+        height: calc($global-vh * 2);
+      }
+    }
+    &__informations {
+      grid-area: Infos;
+      @include quick-flex(column, space-between, flex-start);
+      font-size: calc($font-desktop-xs / 1);
+      line-height: calc($font-desktop-xs * 1.2);
+    }
+    &__socials {
+      grid-area: Socials;
+      @include quick-flex(column, space-between, flex-start);
+      gap: $font-desktop-xs;
+      .social-links {
+        &__title {
+          font-size: $font-desktop-s;
+        }
+        &__list {
+          @include quick-flex(row, center, space-between);
+          gap: $font-desktop-xs;
+          .socials {
+            color: $white;
+            &:hover {
+              color: $orange;
+            }
+            .bi {
+              height: $font-desktop-s;
+            }
+          }
+        }
+        &__email {
+          font-size: calc($font-desktop-xs / 1.1);
+          line-height: $font-desktop-xs;
+        }
+      }
+    }
+  }
+
+  &__activity {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-rows: 0.25fr repeat(2, 1fr);
     grid-template-areas:
-      "hero_title hero_title"
-      "hero_presentation-card hero_contact-card"
-      "hero_presentation-card hero_contact-card";
-    gap: $font-s;
-    .hero_card-title {
-      grid-area: hero_title;
-      @include quick-flex(column);
-      gap: $font-s;
-      font-size: $font-m;
-      text-transform: uppercase;
+      "Title Title"
+      "Languages Languages"
+      "TimeSpent TimeSpent";
+    gap: $font-desktop-xs;
+    &__title {
+      grid-area: Title;
+      font-size: $font-desktop-xs;
+      line-height: calc($font-desktop-xs * 1.25);
     }
-    /* .hero_card:hover {
-      box-shadow: 0 0 $font-xs $orange;
-      transform: scale(1.05);
-    } */
-    .presentation-card {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      grid-template-rows: repeat(2, 1fr);
-      gap: $font-s;
-      grid-template-areas:
-        "avatar informations"
-        "socials socials";
-      .avatar_wrapper {
-        grid-area: avatar;
-        border-radius: 100%;
-        box-shadow: 0 0 0.25rem $orange;
-        @include quick-flex();
-        width: $global-vh;
-        height: $global-vh;
-        overflow: hidden;
-        margin: auto;
-        .avatar {
-          height: calc($global-vh * 1.75);
-        }
+    &__wrapper {
+      &-caption {
+        font-size: $font-desktop-xs;
+        line-height: calc($font-desktop-xs * 1.25);
       }
-      .informations_wrapper {
-        font-size: $font-s;
-        @include quick-flex(column, center, flex-start);
-        gap: $font-xs;
-        padding: $font-xs;
-        margin: auto;
-      }
-      .social-links_wrapper {
-        grid-area: socials;
-        @include quick-flex(column, space-between, flex-start);
-
-        .social-links_title {
-          font-size: $font-m;
-        }
-
-        .social-links_email {
-          font-size: $font-xs;
-          .link {
-            text-decoration: underline;
-          }
-        }
-
-        .social-links_list {
-          @include quick-flex(row, space-between, center);
-          flex-wrap: wrap;
-          gap: $font-xs;
-          width: 100%;
-        }
-        .bi {
-          height: $font-xl;
-          width: $font-xl;
-          color: $white;
-          &:hover {
-            color: $orange;
-          }
-        }
-      }
-    }
-
-    .activity-card_charts {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: $font-xxl;
-      grid-template-rows: 0.25fr 1.75fr;
-      grid-template-areas:
-        "Title Title"
-        "Languages TimeSpent";
-      gap: $font-m;
-
-      .activity-card_title {
-        grid-area: Title;
-        p {
-          font-size: $font-xs;
-          line-height: calc($font-s * 1.15);
-          text-align: end;
-        }
-      }
-      .activity-charts_wrapper {
-        @include quick-flex(column, center, space-between);
-        gap: $font-s;
-      }
-      .activity-charts {
-        border-radius: $font-xs;
-        height: calc(2.5 * $font-xxl);
-      }
-      .languages-chart {
+      &-languages {
         grid-area: Languages;
-        // @include quick-flex(row, flex-start, flex-start);
+        background-color: yellow;
       }
-      .timespent-chart {
+      &-timespent {
         grid-area: TimeSpent;
-        // @include quick-flex(row, flex-end, flex-end);
-      }
-      .charts-caption {
-        text-align: center;
-        font-size: $font-s;
-        line-height: calc($font-s * 1.15);
+        background-color: blue;
       }
     }
   }
 }
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  // body {
+  //   background-color: $black;
+  // }
+}
+
+// section.hero {
+//   grid-area: hero;
+//   @include quick-flex(row, center, flex-start);
+//   padding: 0 $font-desktop-xxl;
+//   // padding-bottom: $font-desktop-l;
+//   .hero_card-wrapper {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-template-rows: 0.5fr 1.5fr;
+//     grid-template-areas:
+//       "hero_title hero_title"
+//       "hero_presentation-card hero_contact-card"
+//       "hero_presentation-card hero_contact-card";
+//     gap: $font-desktop-s;
+//     .hero_card-title {
+//       grid-area: hero_title;
+//       @include quick-flex(column);
+//       gap: $font-desktop-s;
+//       font-size: $font-desktop-m;
+//       text-transform: uppercase;
+//     }
+//     /* .hero_card:hover {
+//       box-shadow: 0 0 $font-desktop-xs $orange;
+//       transform: scale(1.05);
+//     } */
+//     .presentation-card {
+//       display: grid;
+//       grid-template-columns: 0.75fr 1.25fr;
+//       grid-template-rows: repeat(2, 1fr);
+//       gap: $font-desktop-s;
+//       grid-template-areas:
+//         "avatar informations"
+//         "socials socials";
+//       .avatar_wrapper {
+//         grid-area: avatar;
+//         border-radius: 100%;
+//         box-shadow: 0 0 0.25rem $orange;
+//         @include quick-flex();
+//         width: $global-vh;
+//         height: $global-vh;
+//         overflow: hidden;
+//         margin: auto;
+//         .avatar {
+//           height: calc($global-vh * 1.75);
+//         }
+//       }
+//       .informations_wrapper {
+//         font-size: $font-desktop-s;
+//         @include quick-flex(column, center, flex-start);
+//         gap: $font-desktop-xs;
+//         padding: $font-desktop-xs;
+//         margin: auto;
+//       }
+//       .social-links_wrapper {
+//         grid-area: socials;
+//         @include quick-flex(column, space-between, flex-start);
+
+//         .social-links_title {
+//           font-size: $font-desktop-m;
+//         }
+
+//         .social-links_email {
+//           font-size: $font-desktop-xs;
+//           .link {
+//             text-decoration: underline;
+//           }
+//         }
+
+//         .social-links_list {
+//           @include quick-flex(row, space-between, center);
+//           flex-wrap: wrap;
+//           gap: $font-desktop-xs;
+//           width: 100%;
+//         }
+//         .bi {
+//           height: $font-desktop-xl;
+//           width: $font-desktop-xl;
+//           color: $white;
+//           &:hover {
+//             color: $orange;
+//           }
+//         }
+//       }
+//     }
+
+//     .activity-card_charts {
+//       display: grid;
+//       grid-template-columns: repeat(2, 1fr);
+//       margin-top: $font-desktop-xxl;
+//       grid-template-rows: 0.25fr 1.75fr;
+//       grid-template-areas:
+//         "Title Title"
+//         "Languages TimeSpent";
+//       gap: $font-desktop-m;
+
+//       .activity-card_title {
+//         grid-area: Title;
+//         p {
+//           font-size: $font-desktop-xs;
+//           line-height: calc($font-desktop-s * 1.15);
+//           text-align: end;
+//         }
+//       }
+//       .activity-charts_wrapper {
+//         @include quick-flex(column, center, space-between);
+//         gap: $font-desktop-s;
+//       }
+//       .activity-charts {
+//         border-radius: $font-desktop-xs;
+//         height: calc(2.5 * $font-desktop-xxl);
+//       }
+//       .languages-chart {
+//         grid-area: Languages;
+//         // @include quick-flex(row, flex-start, flex-start);
+//       }
+//       .timespent-chart {
+//         grid-area: TimeSpent;
+//         // @include quick-flex(row, flex-end, flex-end);
+//       }
+//       .charts-caption {
+//         text-align: center;
+//         font-size: $font-desktop-s;
+//         line-height: calc($font-desktop-s * 1.15);
+//       }
+//     }
+//   }
+// }

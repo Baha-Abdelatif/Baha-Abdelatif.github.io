@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Variables globales du site */
 
 $black: #1d1e22ff;
@@ -112,3 +113,168 @@ body {
     box-shadow: 0px 0px 5px 1px $orange;
   }
 }
+=======
+/* Variables globales du site */
+
+$black: #1d1e22ff;
+$blue: #128dfc;
+$orange: #fca311ff;
+$platinum: #e5e5e5ff;
+$white: #fffafaff;
+
+$font-desktop-xxl: 5rem;
+$font-desktop-xl: 3rem;
+$font-desktop-l: 2.5rem;
+$font-desktop-m: 2rem;
+$font-desktop-xm: 1.5rem;
+$font-desktop-s: 1.25rem;
+$font-desktop-xs: 1rem;
+$font-desktop-micro: 0.125rem;
+
+$global-vh: 10vh;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// mixin pour eviter de repeter les regles du quick-flex
+@mixin quick-flex($direction: row, $justify: center, $alignment: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignment;
+}
+
+@mixin quick-background($url) {
+  background-image: url($url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// General Styles
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: $black;
+  background-image: url("../assets/herobackground.png");
+  background-attachment: fixed;
+  color: $white;
+  font-size: 62.5%;
+  line-height: 1;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  @include quick-flex(column, flex-start, center);
+  box-sizing: border-box;
+}
+section {
+  // padding: $font-desktop-xs 0;
+  @include quick-flex(column, space-between, stretch);
+  gap: $font-desktop-xs;
+  margin: $font-desktop-xs;
+}
+.link {
+  color: $blue;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+.colored-text {
+  color: $orange;
+}
+.filled-background {
+  background-image: linear-gradient(120deg, $black 0%, $black 100%),
+    linear-gradient(
+      120deg,
+      rgba($orange, 0.5) 0%,
+      rgba($white, 0.5) 50%,
+      rgba($black, 0.5) 100%
+    );
+}
+.border-box {
+  background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
+    linear-gradient(
+        120deg,
+        rgba($orange, 0.5) 0%,
+        rgba($white, 0.5) 50%,
+        rgba($black, 0.5) 100%
+      )
+      border-box;
+  border: $font-desktop-micro solid transparent;
+  border-radius: $font-desktop-xs;
+  padding: $font-desktop-s;
+  transition: background 0.75s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(120deg, $black 0%, $black 100%) padding-box,
+      linear-gradient(
+          120deg,
+          rgba($orange, 0.5) 0%,
+          rgba($white, 0.5) 50%,
+          rgba($black, 0.5) 100%
+        )
+        border-box,
+      $blue;
+  }
+}
+.shadowline {
+  &::after {
+    position: absolute;
+    display: block;
+    top: $global-vh;
+    content: " ";
+    height: $font-desktop-micro;
+    width: 100%;
+    background: linear-gradient(120deg, $orange 0%, $white 75%, $black 100%);
+    box-shadow: 0px 0px 5px 1px $orange;
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  body {
+    background-color: $black;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  body {
+    background-color: $black;
+  }
+}
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3

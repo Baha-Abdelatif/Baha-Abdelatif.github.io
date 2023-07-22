@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+@charset "UTF-8";
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
 html,
 body,
 div,
@@ -82,7 +86,10 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+<<<<<<< HEAD
   font-size: 100%;
+=======
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   vertical-align: baseline;
 }
 
@@ -125,9 +132,13 @@ table {
 }
 
 /* Variables globales du site */
+<<<<<<< HEAD
 /* --------- STYLE GENERAL DE LA PAGE --------- */
 body {
   height: 105vh;
+=======
+body {
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   width: 100vw;
   overflow-x: hidden;
   background-color: #1d1e22;
@@ -139,11 +150,28 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 15vh 85vh repeat(3, 1fr) 30vh;
   gap: 2rem;
   grid-template-areas: "header header" "hero hero" "parcours parcours" "projets projets" "about about" "contact contact";
+=======
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1rem;
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
 }
 
 .link {
@@ -167,7 +195,11 @@ body {
   background: linear-gradient(120deg, #1d1e22 0%, #1d1e22 100%) padding-box, linear-gradient(120deg, rgba(252, 163, 17, 0.5) 0%, rgba(255, 250, 250, 0.5) 50%, rgba(29, 30, 34, 0.5) 100%) border-box;
   border: 0.125rem solid transparent;
   border-radius: 1rem;
+<<<<<<< HEAD
   padding: 2.5rem;
+=======
+  padding: 1.25rem;
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   transition: background 0.75s ease-in-out;
 }
 .border-box:hover {
@@ -177,7 +209,11 @@ body {
 .shadowline::after {
   position: absolute;
   display: block;
+<<<<<<< HEAD
   top: 15vh;
+=======
+  top: 10vh;
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   content: " ";
   height: 0.125rem;
   width: 100%;
@@ -185,13 +221,47 @@ body {
   box-shadow: 0px 0px 5px 1px #fca311;
 }
 
+<<<<<<< HEAD
 /* --------- STYLE DE LA NAVBAR --------- */
 .header {
   grid-area: header;
+=======
+@media (min-width: 576px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    background-color: #1d1e22;
+  }
+}
+/* --------- STYLE DE LA NAVBAR --------- */
+.header {
+  width: 100vw;
+  height: 10vh;
+  padding: 0;
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   gap: 1.5rem;
   padding: 1.25rem 0;
 }
@@ -391,3 +461,226 @@ section.parcours .parcours-resume .resume-items .resume-card_wrapper {
 section.parcours .parcours-resume .resume-items .resume-card_wrapper .resume-card_title {
   font-size: 1.5rem;
 }/*# sourceMappingURL=styles.css.map */
+=======
+}
+.header__logo {
+  margin-left: 1rem;
+  height: 10vh;
+  width: 25vh;
+  background-image: url("../assets/AbDevWebLogoSM.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle:first-child {
+  transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  top: 2.5vh;
+  background-color: #fca311;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle:last-child {
+  transform: rotate(-45deg);
+  display: block;
+  position: absolute;
+  top: 2.5vh;
+  background-color: #fca311;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.header .header_menu-toggle {
+  z-index: 100;
+  position: absolute;
+  right: 2.5vh;
+  top: 2.5vh;
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.125rem;
+}
+.header .header_menu-toggle__toggle {
+  height: 1vh;
+  width: 100%;
+  background-color: snow;
+  border: 0.125rem solid snow;
+}
+.header .header_menu-toggle__toggle:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.header .header_menu-toggle__toggle:last-child {
+  border-radius: 0 0 10px 10px;
+}
+.header #Header__burger-menu {
+  display: none;
+}
+.header #Header__burger-menu:checked + .main-nav {
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+.header .main-nav {
+  display: block;
+  height: 100vh;
+  background-color: #1d1e22;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+.header .main-nav::after {
+  content: "AbDevWeb 2023 - Tous droits résérvés.";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.header .main-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.header .main-nav__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 10vh;
+  width: auto;
+  background-color: #1d1e22;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  color: snow;
+  border-bottom: 0.125rem solid #fca311;
+  transition: all 0.5 ease;
+}
+.header .main-nav__link:hover {
+  background-color: #fca311;
+  color: snow;
+  border-color: snow;
+  transition: all 0.5 ease;
+}
+
+/* --------- STYLE DE LA SECTION HERO --------- */
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+}
+.hero__title__headline {
+  font-size: 2rem;
+}
+.hero__title__tagline {
+  font-size: 1rem;
+}
+.hero__presentation {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "Infos" "Avatar" "Socials";
+  gap: 1rem;
+}
+.hero__presentation__avatar {
+  grid-area: Avatar;
+  border-radius: 100%;
+  padding: 0;
+  overflow: hidden;
+  margin: auto;
+  width: 20vh;
+  height: 20vh;
+}
+.hero__presentation__avatar__img {
+  width: 20vh;
+  height: 20vh;
+}
+.hero__presentation__informations {
+  grid-area: Infos;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+.hero__presentation__socials {
+  grid-area: Socials;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.hero__presentation__socials .social-links__title {
+  font-size: 1.25rem;
+}
+.hero__presentation__socials .social-links__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
+  gap: 1rem;
+}
+.hero__presentation__socials .social-links__list .socials {
+  color: snow;
+}
+.hero__presentation__socials .social-links__list .socials:hover {
+  color: #fca311;
+}
+.hero__presentation__socials .social-links__list .socials .bi {
+  height: 1.25rem;
+}
+.hero__presentation__socials .social-links__email {
+  font-size: 0.9090909091rem;
+  line-height: 1rem;
+}
+.hero__activity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.25fr repeat(2, 1fr);
+  grid-template-areas: "Title Title" "Languages Languages" "TimeSpent TimeSpent";
+  gap: 1rem;
+}
+.hero__activity__title {
+  grid-area: Title;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.hero__activity__wrapper-caption {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.hero__activity__wrapper-languages {
+  grid-area: Languages;
+  background-color: yellow;
+}
+.hero__activity__wrapper-timespent {
+  grid-area: TimeSpent;
+  background-color: blue;
+}
+
+/* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */
+>>>>>>> c65ce382530831908892fcd47a57c607493e2cd3
