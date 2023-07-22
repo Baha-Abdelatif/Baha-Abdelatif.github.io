@@ -12,6 +12,7 @@
 
 .header {
   width: 100vw;
+  overflow-x: hidden;
   height: $global-vh;
   padding: 0;
   @include quick-flex(row, space-between, center);

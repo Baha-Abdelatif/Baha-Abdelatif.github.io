@@ -220,6 +220,7 @@ section {
 /* --------- STYLE DE LA NAVBAR --------- */
 .header {
   width: 100vw;
+  overflow-x: hidden;
   height: 10vh;
   padding: 0;
   display: flex;
