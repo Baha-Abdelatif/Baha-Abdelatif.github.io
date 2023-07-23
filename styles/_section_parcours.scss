@@ -1,4 +1,69 @@
 /* --------- STYLE DE LA SECTION PARCOURS --------- */
+
+.parcours {
+  @include quick-flex(column, stretch, space-between);
+  &__card {
+    @include quick-flex(column, stretch, space-between);
+    width: 100%;
+    // min-height: 20vh;
+    // max-height: 25vh;
+    // margin: $font-desktop-s 0;
+    font-size: $font-desktop-xs;
+    // gap: $font-desktop-xs;
+    &__title {
+      font-size: $font-desktop-s;
+      text-decoration: underline;
+    }
+    &__place {
+      text-align: end;
+      font-weight: bold;
+    }
+    &__dates {
+      font-style: italic;
+      font-weight: lighter;
+    }
+  }
+}
+.parcours__wrapper {
+  @include quick-flex(column, stretch, space-between);
+  &__item {
+    @include quick-flex(row, center, space-between);
+  }
+}
+.card-content__list {
+  list-style: square;
+  margin-inline-start: $font-desktop-s;
+}
+.parcours__card__separator {
+  display: none;
+}
+
+// .parcours__wrapper {
+//   &__item {
+//     width: 50%;
+//     &:nth-child(odd) {
+//       @include quick-flex(row, center, space-between);
+//       margin-right: 50%;
+//     }
+//     &:nth-child(even) {
+//       @include quick-flex(row-reverse, center, space-between);
+//       margin-left: 50%;
+//     }
+//   }
+// }
+// .parcours__card__separator {
+//   border: $font-desktop-micro solid $white;
+//   padding: $font-desktop-s;
+//   border-radius: 100%;
+//   position: absolute;
+//   background-color: $black;
+//   svg {
+//     fill: $white;
+//     height: $font-desktop-s;
+//     width: $font-desktop-s;
+//   }
+// }
+
 // section.parcours {
 //   grid-area: parcours;
 //   @include quick-flex(column, center, space-between);

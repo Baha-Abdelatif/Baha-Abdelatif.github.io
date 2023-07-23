@@ -15,7 +15,7 @@
   overflow-x: hidden;
   height: $global-vh;
   padding: 0;
-  @include quick-flex(row, space-between, center);
+  @include quick-flex(row, center, space-between);
   &__logo {
     margin-left: $font-desktop-xs;
     height: $global-vh;
@@ -48,7 +48,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    @include quick-flex(column, space-between, center);
+    @include quick-flex(column, center, space-between);
     gap: $font-desktop-micro;
     &__toggle {
       height: calc(5vh / 5);
@@ -95,11 +95,11 @@
       font-size: $font-desktop-xs;
     }
     &__list {
-      @include quick-flex(column, space-between, stretch);
+      @include quick-flex(column, stretch, space-between);
     }
 
     &__link {
-      @include quick-flex(column, center, stretch);
+      @include quick-flex(column, stretch, center);
       height: $global-vh;
       width: auto;
       background-color: $black;
