@@ -1,13 +1,13 @@
 /* --------- STYLE DE LA SECTION HERO --------- */
 .hero {
   &__title {
-    @include quick-flex(column, space-between, stretch);
-    gap: $font-desktop-m;
     &__headline {
       font-size: $font-desktop-m;
+      margin: $font-desktop-xs 0;
     }
     &__tagline {
       font-size: $font-desktop-xs;
+      margin: $font-desktop-xs 0;
     }
   }
   &__presentation {
@@ -35,13 +35,13 @@
     }
     &__informations {
       grid-area: Infos;
-      @include quick-flex(column, space-between, flex-start);
+      @include quick-flex(column, flex-start, space-between);
       font-size: calc($font-desktop-xs / 1);
       line-height: calc($font-desktop-xs * 1.2);
     }
     &__socials {
       grid-area: Socials;
-      @include quick-flex(column, space-between, flex-start);
+      @include quick-flex(column, flex-start, space-between);
       gap: $font-desktop-xs;
       .social-links {
         &__title {
@@ -49,7 +49,6 @@
         }
         &__list {
           @include quick-flex(row, center, space-between);
-          gap: $font-desktop-xs;
           .socials {
             color: $white;
             &:hover {

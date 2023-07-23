@@ -27,11 +27,12 @@ $grid-breakpoints: (
 );
 
 // mixin pour eviter de repeter les regles du quick-flex
-@mixin quick-flex($direction: row, $justify: center, $alignment: center) {
+@mixin quick-flex($direction, $alignment, $justify, $gap: $font-desktop-xs) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $alignment;
+  gap: $gap;
 }
 
 @mixin quick-background($url) {
@@ -54,11 +55,11 @@ body {
   background-attachment: fixed;
   color: $white;
   font-size: 62.5%;
-  line-height: 1;
+  line-height: 1.1;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  @include quick-flex(column, flex-start, center);
+  // @include quick-flex(column, center, flex-start);
   box-sizing: border-box;
 }
 
@@ -76,10 +77,15 @@ body {
   }
 }
 
-section {
-  @include quick-flex(column, space-between, stretch);
+.section-container {
+  // @include quick-flex(column, stretch, space-between);
   gap: $font-desktop-xs;
   margin: $font-desktop-xs;
+  &__title {
+    font-size: $font-desktop-s;
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 .link {
   color: $blue;
