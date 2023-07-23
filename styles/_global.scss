@@ -44,6 +44,7 @@ $grid-breakpoints: (
 // General Styles
 html,
 body {
+  // Style ajouté pour résoudre le bug de scroll horizontal sur smartphones
   overflow-x: hidden;
   position: relative;
 }
@@ -62,7 +63,6 @@ body {
   box-sizing: border-box;
 }
 section {
-  // padding: $font-desktop-xs 0;
   @include quick-flex(column, space-between, stretch);
   gap: $font-desktop-xs;
   margin: $font-desktop-xs;
@@ -128,39 +128,36 @@ section {
 }
 
 // X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  body {
-    background-color: $black;
+@media (max-width: 575.98px) {
+  .inexistantClasse {
+    color: white;
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  body {
-    background-color: $black;
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .inexistantClasse {
+    color: white;
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  body {
-    background-color: $black;
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .inexistantClasse {
+    color: white;
   }
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  body {
-    background-color: $black;
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .inexistantClasse {
+    color: white;
   }
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-  body {
-    background-color: $black;
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+  .inexistantClasse {
+    color: white;
   }
 }
