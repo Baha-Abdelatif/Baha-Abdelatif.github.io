@@ -1,4 +1,9 @@
 /* --------- STYLE DE LA SECTION PARCOURS --------- */
+
+.parcours {
+  @include quick-flex(column, center, stretch);
+}
+
 // section.parcours {
 //   grid-area: parcours;
 //   @include quick-flex(column, center, space-between);

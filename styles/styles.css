@@ -132,7 +132,6 @@ body {
 }
 
 body {
-  width: 100vw;
   background-color: #1d1e22;
   background-image: url("../assets/herobackground.png");
   background-attachment: fixed;
@@ -147,6 +146,19 @@ body {
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+::-webkit-scrollbar-track {
+  background: #1d1e22;
+}
+::-webkit-scrollbar-thumb {
+  background: snow;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fca311;
 }
 
 section {
@@ -449,4 +461,10 @@ section {
   grid-area: TimeSpent;
 }
 
-/* --------- STYLE DE LA SECTION PARCOURS --------- *//*# sourceMappingURL=styles.css.map */
+/* --------- STYLE DE LA SECTION PARCOURS --------- */
+.parcours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}/*# sourceMappingURL=styles.css.map */

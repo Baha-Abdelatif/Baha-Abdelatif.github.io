@@ -49,7 +49,6 @@ body {
   position: relative;
 }
 body {
-  width: 100vw;
   background-color: $black;
   background-image: url("../assets/herobackground.png");
   background-attachment: fixed;
@@ -62,6 +61,21 @@ body {
   @include quick-flex(column, flex-start, center);
   box-sizing: border-box;
 }
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: calc($font-desktop-xs / 2.5);
+  &-track {
+    background: $black;
+  }
+  &-thumb {
+    background: $white;
+    &:hover {
+      background: $orange;
+    }
+  }
+}
+
 section {
   @include quick-flex(column, space-between, stretch);
   gap: $font-desktop-xs;
