@@ -17,7 +17,7 @@
   &__card {
     @include quick-flex(column, stretch, space-between);
     width: 100%;
-    line-height: 1.2;
+    // line-height: 1.2;
     &__title {
       text-transform: uppercase;
     }
@@ -36,7 +36,7 @@
 .card-content__list {
   list-style: square;
   margin-inline-start: $font-desktop-s;
-  // font-size: $font-desktop-xs;
+  font-size: $font-desktop-xs;
 }
 .parcours__card__separator {
   display: none;
