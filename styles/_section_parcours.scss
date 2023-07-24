@@ -8,7 +8,8 @@
     // min-height: 20vh;
     // max-height: 25vh;
     // margin: $font-desktop-s 0;
-    font-size: $font-desktop-xs;
+    font-size: $font-desktop-s;
+    line-height: 1.2;
     // gap: $font-desktop-xs;
     &__title {
       font-size: $font-desktop-s;
@@ -17,15 +18,15 @@
     &__place {
       text-align: end;
       font-weight: bold;
-    }
-    &__dates {
       font-style: italic;
-      font-weight: lighter;
     }
   }
 }
 .parcours__wrapper {
   @include quick-flex(column, stretch, space-between);
+  &__title {
+    font-size: $font-desktop-s;
+  }
   &__item {
     @include quick-flex(row, center, space-between);
   }
@@ -33,6 +34,7 @@
 .card-content__list {
   list-style: square;
   margin-inline-start: $font-desktop-s;
+  font-size: $font-desktop-xs;
 }
 .parcours__card__separator {
   display: none;

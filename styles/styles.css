@@ -474,7 +474,8 @@ body {
   align-items: stretch;
   gap: 1rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 .parcours__card__title {
   font-size: 1.25rem;
@@ -483,10 +484,7 @@ body {
 .parcours__card__place {
   text-align: end;
   font-weight: bold;
-}
-.parcours__card__dates {
   font-style: italic;
-  font-weight: lighter;
 }
 
 .parcours__wrapper {
@@ -495,6 +493,9 @@ body {
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
+}
+.parcours__wrapper__title {
+  font-size: 1.25rem;
 }
 .parcours__wrapper__item {
   display: flex;
@@ -507,6 +508,7 @@ body {
 .card-content__list {
   list-style: square;
   margin-inline-start: 1.25rem;
+  font-size: 1rem;
 }
 
 .parcours__card__separator {
