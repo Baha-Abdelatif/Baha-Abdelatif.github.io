@@ -244,13 +244,10 @@ body {
   gap: 1rem;
 }
 .header__logo {
-  margin-left: 1rem;
-  height: 10vh;
-  width: 25vh;
-  background-image: url("../assets/AbDevWebLogoSM.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-left: 1.25rem;
+}
+.header__logo img {
+  height: 20vh;
 }
 .header .header_menu-toggle:has(+ #Header__burger-menu:checked) .header_menu-toggle__toggle {
   display: none;

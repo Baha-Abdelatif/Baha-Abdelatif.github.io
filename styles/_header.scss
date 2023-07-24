@@ -17,10 +17,12 @@
   padding: 0;
   @include quick-flex(row, center, space-between);
   &__logo {
-    margin-left: $font-desktop-xs;
-    height: $global-vh;
-    width: calc($global-vh * 2.5);
-    @include quick-background("../assets/AbDevWebLogoSM.svg");
+    margin-left: $font-desktop-s;
+    img {
+      height: calc(2 * $global-vh);
+      // width: calc($global-vh * 2.5);
+    }
+    // @include quick-background("../assets/AbDevWebLogoSM.svg");
   }
 
   // ":has(+ input:checked)" Selectionne l'element qui a une balise soeur
