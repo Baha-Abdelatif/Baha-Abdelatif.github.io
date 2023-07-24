@@ -494,7 +494,6 @@ body {
   align-items: stretch;
   gap: 1rem;
   width: 100%;
-  line-height: 1.2;
 }
 .parcours__card__title {
   text-transform: uppercase;
@@ -513,6 +512,7 @@ body {
 .card-content__list {
   list-style: square;
   margin-inline-start: 1.25rem;
+  font-size: 1rem;
 }
 
 .parcours__card__separator {
