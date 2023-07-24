@@ -261,7 +261,7 @@ body {
   display: block;
   position: absolute;
   top: 2.5vh;
-  background-color: #fca311;
+  background-color: snow;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 }
@@ -270,7 +270,7 @@ body {
   display: block;
   position: absolute;
   top: 2.5vh;
-  background-color: #fca311;
+  background-color: snow;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 }
@@ -466,27 +466,8 @@ body {
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
-}
-.parcours__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 1rem;
-  width: 100%;
   font-size: 1.25rem;
-  line-height: 1.2;
 }
-.parcours__card__title {
-  font-size: 1.25rem;
-  text-decoration: underline;
-}
-.parcours__card__place {
-  text-align: end;
-  font-weight: bold;
-  font-style: italic;
-}
-
 .parcours__wrapper {
   display: flex;
   flex-direction: column;
@@ -495,7 +476,9 @@ body {
   gap: 1rem;
 }
 .parcours__wrapper__title {
-  font-size: 1.25rem;
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-size: 1.5rem;
 }
 .parcours__wrapper__item {
   display: flex;
@@ -504,11 +487,32 @@ body {
   align-items: center;
   gap: 1rem;
 }
+.parcours__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  line-height: 1.2;
+}
+.parcours__card__title {
+  text-transform: uppercase;
+}
+.parcours__card__place {
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.parcours__card__dates {
+  text-transform: capitalize;
+  font-weight: 300;
+  text-align: end;
+}
 
 .card-content__list {
   list-style: square;
   margin-inline-start: 1.25rem;
-  font-size: 1rem;
 }
 
 .parcours__card__separator {
